@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MentorVerse - Platform Akselerasi Karier Digital melalui 1-on-1 Mentorship, Bedah Portofolio ATS, dan Mock Technical Interview bersama praktisi industri teknologi.">
+  <title>MentorVerse | Akselerasi Karier Digital Bersama Mentor Industri</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+   /* ==========================================================================
+   1. CSS DESIGN TOKENS (TIMPA BAGIAN :root INI)
+   ========================================================================== */
+:root {
+  /* Colors - Tema Teal & Warm Orange */
+  --primary: #008B99;
+  --primary-hover: #007682;
+  --primary-dark: #1E293B;
+  --secondary: #F2831F;
+  --secondary-hover: #D97013;
+  --amber-rating: #F59E0B;
+  --bg-canvas: #F4F7FB;
+  --surface: #FFFFFF;
+  --surface-subtle: #E0F4F7; /* Aksen Teal lembut untuk badge/pill */
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --border-hairline: #E2E8F0;
+  --success: #10B981;
+  
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Spacing Scale (8px Grid System) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+
+  /* Shapes & Elevation (Disesuaikan agar lebih bersih/flat) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --shadow-subtle: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-card-hover: 0 10px 24px rgba(0, 139, 153, 0.08);
+  --shadow-pill: 0 4px 12px rgba(15, 23, 42, 0.06);
+  
+  --container-max: 1200px;
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.25s ease-in-out;
+}
+
+    /* Box Sizing & CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+    }
+
+    /* Global Container Utility */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--space-md);
+    }
+
+    /* Standard Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: all var(--transition-fast);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--primary-dark);
+      color: #FFFFFF;
+    }
+    .btn-secondary:hover {
+      background-color: #172c5a;
+      transform: translateY(-1px);
+    }
+
+    .btn-accent {
+      background-color: var(--secondary);
+      color: #FFFFFF;
+    }
+    .btn-accent:hover {
+      background-color: var(--secondary-hover);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Section Header Typography */
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-sm);
+    }
+
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 600px;
+    }
+
+    /* ==========================================================================
+       2. TOPBAR & MAIN NAVIGATION
+       ========================================================================== */
+    .top-utility-bar {
+      background-color: var(--primary-dark);
+      color: #CBD5E1;
+      font-size: 0.8125rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: var(--space-xs) 0;
+    }
+    .top-utility-bar .container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      align-items: center;
+    }
+    .top-utility-left, .top-utility-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .top-utility-link:hover {
+      color: #FFFFFF;
+    }
+    .auth-link {
+      color: #FFFFFF;
+      font-weight: 600;
+      padding: 4px 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+    }
+
+    .main-nav-bar {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border-hairline);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+    .brand-logo svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .mobile-menu-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: var(--radius-md);
+      background-color: var(--surface-subtle);
+    }
+    .mobile-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-drawer {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--surface);
+      border-bottom: 2px solid var(--border-hairline);
+      padding: var(--space-md);
+      box-shadow: 0 12px 24px rgba(14, 27, 56, 0.08);
+    }
+    .nav-drawer.is-active {
+      display: block;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .nav-link {
+      font-weight: 600;
+      padding: var(--space-sm) var(--space-xs);
+      border-bottom: 1px solid var(--border-hairline);
+      display: block;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-search-bar {
+      position: relative;
+      margin-bottom: var(--space-md);
+    }
+    .nav-search-bar input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-full);
+      background-color: var(--bg-canvas);
+      font-size: 0.875rem;
+    }
+    .nav-search-bar svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      fill: var(--text-secondary);
+    }
+
+    .nav-cart-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: var(--radius-full);
+      background-color: var(--surface-subtle);
+    }
+    .nav-cart-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-primary);
+    }
+    .cart-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background-color: var(--secondary);
+      color: #FFFFFF;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION
+       ========================================================================== */
+   .hero-section {
+  padding: var(--space-2xl) 0;
+  background: radial-gradient(circle at 80% 20%, #E0F4F7 0%, var(--bg-canvas) 70%);
+  position: relative;
+}
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+    .hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--surface-subtle);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-md);
+}
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--secondary);
+      border-radius: var(--radius-full);
+    }
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--primary-dark);
+      margin-bottom: var(--space-md);
+    }
+    .hero-title span {
+      color: var(--primary);
+    }
+    .hero-description {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+    .hero-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-xl);
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--primary-dark);
+    }
+    .checklist-item svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--primary);
+      flex-shrink: 0;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+
+    /* Hero Visual & Floating Pills */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: var(--space-xl) var(--space-lg);
+  color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+    .hero-visual-card::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 140px;
+      height: 140px;
+      border: 12px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-full);
+    }
+    .hero-card-tag {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: var(--space-md);
+    }
+    .hero-card-headline {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: var(--space-lg);
+    }
+    .hero-metric-row {
+      display: flex;
+      gap: var(--space-md);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: var(--space-md);
+    }
+    .metric-value {
+      font-size: 1.625rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      color: #CBD5E1;
+      margin-top: 4px;
+    }
+
+    .floating-pill {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      box-shadow: var(--shadow-pill);
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: var(--space-md);
+    }
+    .floating-pill-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+    }
+    .floating-pill-dot.blue { background-color: var(--primary); }
+    .floating-pill-dot.coral { background-color: var(--secondary); }
+
+    /* ==========================================================================
+       4. TRUST PROPOSITION STRIP
+       ========================================================================== */
+    .trust-strip {
+      background-color: var(--surface);
+      border-block: 1px solid var(--border-hairline);
+      padding: var(--space-lg) 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .trust-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+    .trust-icon-box svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--primary);
+    }
+
+    /* ==========================================================================
+       5. ABOUT SECTION (ASYMMETRIC COLLAGE)
+       ========================================================================== */
+    .about-section {
+      padding: var(--space-3xl) 0;
+    }
+    .about-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+    .about-collage {
+      position: relative;
+    }
+    .collage-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .collage-card-inner {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  color: #FFFFFF;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+    .collage-badge {
+      position: absolute;
+      top: -15px;
+      right: 15px;
+      background-color: var(--secondary);
+      color: #FFFFFF;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-pill);
+    }
+
+    .about-mission-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+    .about-mission-item {
+      display: flex;
+      gap: var(--space-md);
+    }
+   .mission-bullet-num {
+  width: 32px;
+  height: 32px;
+  background-color: var(--surface-subtle);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+}
+    .mission-text h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .mission-text p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       6. MAIN CONTENT & SIDEBAR LAYOUT (CSS GRID)
+       ========================================================================== */
+    .layout-wrapper-section {
+      padding-bottom: var(--space-3xl);
+    }
+    .main-sidebar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    /* Content Primary Area */
+    .content-primary {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3xl);
+    }
+
+    /* Category Filter Tabs */
+    .filter-tabs-nav {
+      display: flex;
+      gap: var(--space-xs);
+      overflow-x: auto;
+      padding-bottom: var(--space-sm);
+      margin: var(--space-md) 0 var(--space-xl);
+      scrollbar-width: none;
+    }
+    .filter-tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-pill {
+      min-height: 40px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Service Cards (Grid) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+    .service-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .card-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-md);
+    }
+    .duration-tag {
+  background-color: #FDEBD9;
+  color: var(--secondary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .rating-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--amber-rating);
+    }
+    .service-card-title {
+      font-size: 1.1875rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .service-card-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+      flex-grow: 1;
+    }
+    .mentor-profile-strip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border-hairline);
+      margin-bottom: var(--space-md);
+    }
+    .mentor-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background-color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--text-primary);
+    }
+    .mentor-meta-info h4 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .mentor-meta-info p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+    .card-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price-tag {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Founders Section */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+    .founder-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform var(--transition-fast);
+    }
+    .founder-card:hover {
+      transform: translateY(-4px);
+    }
+    .founder-avatar-frame {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  border: 4px solid var(--bg-canvas);
+}
+    .founder-name {
+      font-size: 1.1875rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+ .founder-role-badge {
+  background-color: var(--surface-subtle);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+    .founder-bio {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+      line-height: 1.5;
+    }
+    .founder-social-links {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    .social-btn {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      background-color: var(--surface-subtle);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding-inline: 12px;
+      transition: all var(--transition-fast);
+    }
+    .social-btn:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+    .testimonial-figure {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .testimonial-quote {
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      font-style: italic;
+      margin-bottom: var(--space-md);
+      line-height: 1.6;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-initial {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background-color: var(--primary-dark);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+    .author-info h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .author-info p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       7. ASIDE (MANDATORY SIDEBAR WIDGETS)
+       ========================================================================== */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    .sidebar-widget {
+      background-color: var(--surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .widget-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .widget-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Webinar Widget */
+    .webinar-date-badge {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: #FFFFFF;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-xs);
+    }
+    .webinar-topic {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: var(--space-xs);
+      line-height: 1.35;
+    }
+    .webinar-speaker {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Career Tips Widget */
+    .tips-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .tip-item {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 20px;
+    }
+    .tip-item::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    /* Fast Newsletter Widget */
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .form-group input {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 14px;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+    }
+    .form-group input:focus {
+      border-color: var(--primary);
+      background-color: #FFFFFF;
+    }
+    .form-feedback {
+      font-size: 0.75rem;
+      font-weight: 600;
+      min-height: 18px;
+    }
+    .form-feedback.error { color: var(--secondary); }
+    .form-feedback.success { color: var(--success); }
+
+    /* ==========================================================================
+       8. FOOTER
+       ========================================================================== */
+    .main-footer {
+      background-color: var(--primary-dark);
+      color: #94A3B8;
+      padding: var(--space-3xl) 0 var(--space-xl);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+    .footer-col-brand .brand-logo {
+      color: #FFFFFF;
+      margin-bottom: var(--space-md);
+    }
+    .footer-col-brand p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .footer-title {
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .footer-link {
+      font-size: 0.875rem;
+    }
+    .footer-link:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      align-items: center;
+      text-align: center;
+      font-size: 0.8125rem;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: var(--space-md);
+    }
+    .footer-social-icons a {
+      color: #FFFFFF;
+      font-size: 0.875rem;
+    }
+
+    /* ==========================================================================
+       9. RESPONSIVE DESIGN (@media Queries Mobile-First)
+       ========================================================================== */
+    /* Tablet Breakpoint (min-width: 768px) */
+    @media (min-width: 768px) {
+      .top-utility-bar .container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .top-utility-left, .top-utility-right {
+        justify-content: flex-start;
+      }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .founders-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-title {
+        font-size: 2.75rem;
+      }
+    }
+
+    /* Desktop Breakpoint (min-width: 992px) */
+    @media (min-width: 992px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+      .nav-drawer {
+        display: flex;
+        position: static;
+        width: auto;
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+        align-items: center;
+        gap: var(--space-xl);
+      }
+      .nav-list {
+        flex-direction: row;
+        gap: var(--space-lg);
+        margin-bottom: 0;
+      }
+      .nav-link {
+        padding: 0;
+        border: none;
+        font-size: 0.9375rem;
+      }
+      .nav-search-bar {
+        margin-bottom: 0;
+        width: 220px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: var(--space-3xl);
+      }
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-3xl);
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      /* Desktop Two-Column Layout (Content 70% vs Sidebar 30%) */
+      .main-sidebar-grid {
+        grid-template-columns: 1fr 340px;
+        align-items: start;
+        gap: var(--space-2xl);
+      }
+      .sidebar {
+        position: sticky;
+        top: 96px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      }
+      .footer-bottom-row {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    /* Large Desktop Breakpoint (min-width: 1200px) */
+    @media (min-width: 1200px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP UTILITY BAR (<header>)
+       ======================================================================== -->
+  <header class="top-utility-bar">
+    <div class="container">
+      <div class="top-utility-left">
+        <span>📧 info@mentorverse.id</span>
+        <span>🕒 Sen - Sab: 08.00 - 18.00 WIB</span>
+      </div>
+      <div class="top-utility-right">
+        <a href="#about" class="top-utility-link">Kemitraan Industri</a>
+        <a href="#founders" class="top-utility-link">Profil Pengembang</a>
+        <a href="#auth" class="auth-link">Masuk / Daftar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN NAVIGATION BAR (<nav>)
+       ======================================================================== -->
+  <nav class="main-nav-bar" aria-label="Navigasi Utama Situs">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Beranda MentorVerse">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"/></svg>
+        <span>MentorVerse</span>
+      </a>
+
+      <!-- Navigation Drawer (Desktop Row / Mobile Slide Drawer) -->
+      <div class="nav-drawer" id="mainNavDrawer">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Beranda</a></li>
+          <li><a href="#services" class="nav-link">Program Mentoring</a></li>
+          <li><a href="#about" class="nav-link">Tentang Kami</a></li>
+          <li><a href="#founders" class="nav-link">Founders</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
+        </ul>
+
+        <div class="nav-search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 015.3 14l4.7 4.7-1.4 1.4-4.7-4.7A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>
+          <input type="search" placeholder="Cari mentor / topik..." aria-label="Cari mentor atau topik program">
+        </div>
+      </div>
+
+      <!-- Action Group -->
+      <div class="nav-actions">
+        <a href="#cart" class="nav-cart-btn" aria-label="Keranjang Program">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14.8h9.8c.8 0 1.4-.4 1.7-1.1l3.6-6.5c.2-.4.2-.8 0-1.1-.2-.4-.6-.6-1-.6H5.2L4.3 2H1v2h2l3.6 7.6-1.4 2.5c-.2.3-.2.7-.2 1 0 1.1.9 2 2 2z"/></svg>
+          <span class="cart-badge" aria-label="2 program dalam keranjang">2</span>
+        </a>
+        <a href="#services" class="btn btn-primary">Mulai Konsultasi</a>
+        
+        <button class="mobile-menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-controls="mainNavDrawer" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       MAIN CONTENT CONTAINER (<main>)
+       ======================================================================== -->
+  <main>
+
+    <!-- 1. HERO SECTION (<section id="hero">) -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <span class="hero-badge-dot"></span>
+            <span>AKSELERASI KARIER DIGITAL 2026</span>
+          </div>
+          <h1 class="hero-title">Akselerasi Karier Digitalmu Bersama <span>Mentor Top Dunia Industri</span></h1>
+          <p class="hero-description">
+            Jembatani kesenjangan kurikulum akademik dengan bimbingan 1-on-1 privat, bedah portofolio standar ATS, dan simulasi technical interview langsung dari praktisi teknologi terkemuka.
+          </p>
+
+          <ul class="hero-checklist">
+            <li class="checklist-item">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"/></svg>
+              <span>Bimbingan 1-on-1 Bersama Senior Engineer & Designer</span>
+            </li>
+            <li class="checklist-item">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"/></svg>
+              <span>Kurasi Portofolio Berstandar Industri Startup & Big Tech</span>
+            </li>
+            <li class="checklist-item">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"/></svg>
+              <span>Simulasi Wawancara Kerja & Negosiasi Penawaran Gaji</span>
+            </li>
+          </ul>
+
+          <div class="hero-cta-group">
+            <a href="#services" class="btn btn-primary">Jadwalkan Mentoring</a>
+            <a href="#about" class="btn btn-secondary">Pelajari Program</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <span class="hero-card-tag">BATCH Q1 2026 TELAH DIBUKA</span>
+            <p class="hero-card-headline">Kurikulum Praktis Teruji untuk Mahasiswa & Career Switcher</p>
+            <div class="hero-metric-row">
+              <div>
+                <p class="metric-value">94.8%</p>
+                <p class="metric-label">Tingkat Kelolosan Kerja</p>
+              </div>
+              <div>
+                <p class="metric-value">&lt; 90 Hari</p>
+                <p class="metric-label">Rata-rata Waktu Diterima</p>
+              </div>
+            </div>
+            
+            <div class="floating-pill">
+              <span class="floating-pill-dot blue"></span>
+              <span>16,500+ Mentee Terbimbing</span>
+            </div>
+            <div class="floating-pill">
+              <span class="floating-pill-dot coral"></span>
+              <span>150+ Top Tech Mentors Aktif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TRUST PROPOSITION STRIP (<section class="trust-strip">) -->
+    <section class="trust-strip" aria-label="Keunggulan Utama Platform">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+          </div>
+          <span>1-on-1 Career Mentoring</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.7 0-1.1.1 1.3.9 2.1 2.1 2.1 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/></svg>
+          </div>
+          <span>Akses Komunitas Seumur Hidup</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <span>Kurasi Portofolio Industri</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4z"/></svg>
+          </div>
+          <span>Dukungan Mock Interview</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17.9V18h-2v1.9c-4-.5-7.4-3.9-7.9-7.9H5v-2H3.1c.5-4 3.9-7.4 7.9-7.9V5h2V3.1c4 .5 7.4 3.9 7.9 7.9H19v2h1.9c-.5 4-3.9 7.4-7.9 7.9z"/></svg>
+          </div>
+          <span>Jaringan Kerja Mitra Startup</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION (<section id="about">) -->
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div class="about-collage">
+          <div class="collage-badge">24+ Mitra Tech Startup</div>
+          <div class="collage-card">
+            <div class="collage-card-inner">
+              <span class="hero-badge-pill" style="align-self: flex-start; margin-bottom: 8px;">Pemberdayaan Berkelanjutan</span>
+              <h3 style="font-size: 1.25rem; font-weight: 700;">Pengalaman Nyata, Bukan Sekadar Teori Buku</h3>
+              <p style="font-size: 0.875rem; color: #CBD5E1; margin-top: 4px;">Sesi diskusi langsung dengan praktisi di bidang software architecture, product lifecycle, dan UI/UX systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-column">
+          <span class="section-tag">TENTANG MENTORVERSE</span>
+          <h2 class="section-title">Jembatani Kesenjangan Akademik dengan Kebutuhan Riil Industri Teknologi</h2>
+          <p class="section-desc">
+            Banyak lulusan perguruan tinggi memiliki nilai akademik gemilang, namun gagap saat menghadapi tantangan wawancara teknis dan standar pengerjaan kode profesional. MentorVerse didirikan untuk memangkas *gap* tersebut secara terukur.
+          </p>
+
+          <div class="about-mission-list">
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">1</div>
+              <div class="mission-text">
+                <h3>Bimbingan Terarah dari Praktisi Terpilih</h3>
+                <p>Belajar langsung dari Tech Lead, Product Manager, dan Principal Designer yang aktif membangun produk skala jutaan pengguna.</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">2</div>
+              <div class="mission-text">
+                <h3>Kurasi Resume & Portofolio Lolos ATS</h3>
+                <p>Studi kasus nyata pada portofolio Anda dibedah menyeluruh agar menarik perhatian recruiter tech company dalam 6 detik pertama.</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">3</div>
+              <div class="mission-text">
+                <h3>Jalur Rekomendasi Kerja Khusus</h3>
+                <p>Mentee berkinerja tinggi langsung direkomendasikan ke ekosistem jaringan perusahaan mitra startup teknologi kami.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#services" class="btn btn-primary">Eksplorasi Katalog Layanan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MAIN CONTENT & SIDEBAR CONTAINER (70% Content vs 30% Sidebar) -->
+    <section class="layout-wrapper-section">
+      <div class="container main-sidebar-grid">
+        
+        <!-- =================== KONTEN UTAMA (70%) =================== -->
+        <div class="content-primary">
+
+          <!-- A. Services Catalog Section -->
+          <section id="services" aria-labelledby="servicesTitle">
+            <span class="section-tag">PROGRAM UNGGULAN</span>
+            <h2 id="servicesTitle" class="section-title">Katalog Program Akselerasi Karier</h2>
+            <p class="section-desc">Pilih paket bimbingan intensif yang disesuaikan dengan kebutuhan akselerasi karier teknologi Anda saat ini.</p>
+
+            <!-- Filter Pills -->
+            <div class="filter-tabs-nav" role="tablist" aria-label="Filter Kategori Program">
+              <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">Semua Program</button>
+              <button class="filter-pill" data-filter="engineering" role="tab" aria-selected="false">Software Engineering</button>
+              <button class="filter-pill" data-filter="design" role="tab" aria-selected="false">UI/UX Design</button>
+              <button class="filter-pill" data-filter="data" role="tab" aria-selected="false">Data & AI</button>
+              <button class="filter-pill" data-filter="product" role="tab" aria-selected="false">Product Management</button>
+            </div>
+
+            <!-- Program Cards Grid -->
+            <div class="services-grid">
+              <!-- Card 1 -->
+              <article class="service-card" data-category="engineering">
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">04 MINGGU INTENSIF</span>
+                    <div class="rating-badge">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"/></svg>
+                      <span>4.9 (148 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">1-on-1 Career Mentoring: Fullstack Path</h3>
+                  <p class="service-card-desc">Sesi privat terstruktur merancang personal career roadmap, bedah arsitektur sistem, dan evaluasi rutin kemajuan coding Anda.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">KP</div>
+                    <div class="mentor-meta-info">
+                      <h4>Kevin Perry</h4>
+                      <p>Lead Engineer @ Tech Unicorn</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 499.000</span>
+                    <a href="#register" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="service-card" data-category="design">
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">02 MINGGU REVIEW</span>
+                    <div class="rating-badge">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"/></svg>
+                      <span>5.0 (92 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">Portfolio & Resume ATS Deep-Audit</h3>
+                  <p class="service-card-desc">Review baris-per-baris resume dan studi kasus portofolio desain Anda agar lolos pemindaian ATS dan memikat Hiring Manager.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">AA</div>
+                    <div class="mentor-meta-info">
+                      <h4>Alvi Alexis</h4>
+                      <p>Senior Product Designer</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 299.000</span>
+                    <a href="#register" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="service-card" data-category="engineering">
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">LIVE SIMULATION</span>
+                    <div class="rating-badge">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"/></svg>
+                      <span>4.9 (115 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">Mock Technical & System Design Interview</h3>
+                  <p class="service-card-desc">Simulasi live coding teknis 90 menit dan studi kasus arsitektur sistem dengan feedback tertulis mendalam setelah sesi selesai.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">CH</div>
+                    <div class="mentor-meta-info">
+                      <h4>Chaplin</h4>
+                      <p>Principal Frontend Engineer</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 399.000</span>
+                    <a href="#register" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- B. Founders Section (<section id="founders">) -->
+          <section id="founders" aria-labelledby="foundersTitle">
+            <span class="section-tag">DEWAN PENDIRI</span>
+            <h2 id="foundersTitle" class="section-title">Dipimpin oleh Tim Inovator Muda Berdedikasi</h2>
+            <p class="section-desc">Masing-masing pendiri membawa keahlian fungsional di bidang kepemimpinan produk, arsitektur sistem, dan rekayasa antarmuka digital.</p>
+
+            <div class="founders-grid">
+              <!-- Founder 1 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame">R</div>
+                <h3 class="founder-name">Rakha</h3>
+                <span class="founder-role-badge">Chief Executive Officer</span>
+                <p class="founder-bio">Memimpin arah visi strategis produk MentorVerse, kemitraan ekosistem industri digital, dan pengawasan arsitektur semantik standar W3C.</p>
+                <div class="founder-social-links">
+                  <a href="#linkedin" class="social-btn" aria-label="Profil LinkedIn Rakha">LinkedIn</a>
+                  <a href="#github" class="social-btn" aria-label="Profil GitHub Rakha">GitHub</a>
+                </div>
+              </article>
+
+              <!-- Founder 2 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame">A</div>
+                <h3 class="founder-name">Alvi</h3>
+                <span class="founder-role-badge">Chief Technology Officer</span>
+                <p class="founder-bio">Merancang fondasi sistem tampilan CSS berbasis token desain, skalabilitas kode Flexbox & Grid, dan performa aksesibilitas WCAG AAA.</p>
+                <div class="founder-social-links">
+                  <a href="#linkedin" class="social-btn" aria-label="Profil LinkedIn Alvi">LinkedIn</a>
+                  <a href="#github" class="social-btn" aria-label="Profil GitHub Alvi">GitHub</a>
+                </div>
+              </article>
+
+              <!-- Founder 3 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame">C</div>
+                <h3 class="founder-name">Chaplin</h3>
+                <span class="founder-role-badge">Lead UI/UX & Frontend</span>
+                <p class="founder-bio">Bertanggung jawab atas responsivitas multi-perangkat via media queries, pengalaman interaktif pengguna, dan modularitas Vanilla JavaScript.</p>
+                <div class="founder-social-links">
+                  <a href="#linkedin" class="social-btn" aria-label="Profil LinkedIn Chaplin">LinkedIn</a>
+                  <a href="#github" class="social-btn" aria-label="Profil GitHub Chaplin">GitHub</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- C. Testimonials Section (<section id="testimonials">) -->
+          <section id="testimonials" aria-labelledby="testimonialsTitle">
+            <span class="section-tag">BUKTI KEBERHASILAN</span>
+            <h2 id="testimonialsTitle" class="section-title">Apa Kata Alumni Mentee Kami?</h2>
+            <p class="section-desc">Kisah nyata mereka yang berhasil meraih penawaran kerja pertama di industri teknologi.</p>
+
+            <div class="testimonials-grid">
+              <figure class="testimonial-figure">
+                <blockquote class="testimonial-quote">
+                  "Bedah portofolio di MentorVerse benar-benar membuka mata saya. Dari 20 aplikasi yang saya kirim dan selalu ditolak, setelah perbaikan resume bersama Alvi, saya langsung dipanggil interview di 4 tech company!"
+                </blockquote>
+                <figcaption class="testimonial-author">
+                  <div class="author-initial">DN</div>
+                  <div class="author-info">
+                    <h4>Dimas Nugraha</h4>
+                    <p>Junior Frontend Dev @ FinTech Solution</p>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <figure class="testimonial-figure">
+                <blockquote class="testimonial-quote">
+                  "Simulasi mock technical interview-nya sangat mirip dengan kondisi wawancara aslinya. Masukan dari mentor Kevin membuat saya jauh lebih tenang dan percaya diri saat live coding test."
+                </blockquote>
+                <figcaption class="testimonial-author">
+                  <div class="author-initial">SP</div>
+                  <div class="author-info">
+                    <h4>Siti Prameswari</h4>
+                    <p>Associate Software Engineer @ E-Commerce</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- =================== SIDEBAR (<aside>) (30%) =================== -->
+        <aside class="sidebar" aria-label="Informasi Sekunder dan Agenda">
+          
+          <!-- Widget 1: Upcoming Webinar -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Agenda Webinar Mendatang</h3>
+            </div>
+            <span class="webinar-date-badge">14 OKTOBER 2026 • 19.30 WIB</span>
+            <h4 class="webinar-topic">Kiat Lolos Wawancara Tech Startup 2026: Tembus Gaji Dua Digit</h4>
+            <p class="webinar-speaker">Pembicara: Pratama Wijaya (Engineering Manager)</p>
+            <a href="#webinar-rsvp" class="btn btn-accent" style="width: 100%;">RSVP Sekarang (Gratis)</a>
+          </article>
+
+          <!-- Widget 2: Quick Career Tips -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Tips Karier Kilat (ATS)</h3>
+            </div>
+            <ul class="tips-list">
+              <li class="tip-item">Gunakan format tanggal standar YYYY-MM agar mesin pemindai ATS tidak mengalami eror *parsing*.</li>
+              <li class="tip-item">Tuliskan pencapaian berbasis metrik riil (misal: "Meningkatkan performa web sebesar 34%").</li>
+              <li class="tip-item">Sertakan tautan proyek live demo yang dapat langsung diakses publik pada file resume.</li>
+            </ul>
+          </article>
+
+          <!-- Widget 3: Fast Newsletter Form -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Notifikasi Batch Baru</h3>
+            </div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--space-md);">Dapatkan informasi awal saat kuota mentoring dibuka kembali.</p>
+            <form class="newsletter-form" id="sidebarNewsletterForm" novalidate>
+              <div class="form-group">
+                <input type="email" id="subscriberEmail" placeholder="Masukkan alamat email aktif" required aria-label="Alamat email untuk newsletter">
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Daftarkan Email Saya</button>
+              <p class="form-feedback" id="formFeedbackMsg" aria-live="polite"></p>
+            </form>
+          </article>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER (<footer>)
+       ======================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <a href="#hero" class="brand-logo" aria-label="Beranda MentorVerse">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: #1E60F2;"><path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"/></svg>
+            <span>MentorVerse</span>
+          </a>
+          <p>
+            Platform akselerasi karier teknologi nomor satu yang berkomitmen mendemokratisasi akses bimbingan industri berkualitas bagi mahasiswa dan lulusan baru Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Tautan Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link">Beranda Utama</a></li>
+            <li><a href="#services" class="footer-link">Katalog Program</a></li>
+            <li><a href="#about" class="footer-link">Tentang Startup</a></li>
+            <li><a href="#founders" class="footer-link">Profil Pengembang</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Track Program</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Software Engineering</a></li>
+            <li><a href="#services" class="footer-link">UI/UX Design</a></li>
+            <li><a href="#services" class="footer-link">Data & Artificial Intelligence</a></li>
+            <li><a href="#services" class="footer-link">Product Management</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Kantor Operasional</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 8px;">Kawasan Inovasi Digital Cakrawala, Jakarta Selatan, DKI Jakarta 12430</p>
+          <p style="font-size: 0.875rem;">Email: info@mentorverse.id</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>© 2026 MentorVerse Technologies. Hak cipta dilindungi undang-undang.</p>
+        <div class="footer-social-icons">
+          <a href="#github" aria-label="GitHub MentorVerse">GitHub</a>
+          <a href="#linkedin" aria-label="LinkedIn MentorVerse">LinkedIn</a>
+          <a href="#instagram" aria-label="Instagram MentorVerse">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODULAR VANILLA JAVASCRIPT (ES6)
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Hamburger Menu Toggle
+      const menuBtn = document.getElementById('menuToggleBtn');
+      const navDrawer = document.getElementById('mainNavDrawer');
+
+      if (menuBtn && navDrawer) {
+        menuBtn.addEventListener('click', () => {
+          const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+          navDrawer.classList.toggle('is-active');
+        });
+
+        // Close drawer when clicking a navigation link
+        navDrawer.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            menuBtn.setAttribute('aria-expanded', 'false');
+            navDrawer.classList.remove('is-active');
+          });
+        });
+      }
+
+      // 2. Category Tab Filter Interactivity
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const serviceCards = document.querySelectorAll('.service-card');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('active');
+            p.setAttribute('aria-selected', 'false');
+          });
+          pill.classList.add('active');
+          pill.setAttribute('aria-selected', 'true');
+
+          const selectedCategory = pill.dataset.filter;
+
+          serviceCards.forEach(card => {
+            const cardCat = card.dataset.category;
+            if (selectedCategory === 'all' || cardCat === selectedCategory) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 3. Fast Newsletter Form Validation (Constraint Validation API)
+      const newsletterForm = document.getElementById('sidebarNewsletterForm');
+      const emailInput = document.getElementById('subscriberEmail');
+      const feedbackMsg = document.getElementById('formFeedbackMsg');
+
+      if (newsletterForm && emailInput && feedbackMsg) {
+        newsletterForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          if (!emailInput.checkValidity()) {
+            feedbackMsg.textContent = 'Silakan masukkan alamat email yang valid.';
+            feedbackMsg.className = 'form-feedback error';
+            emailInput.focus();
+          } else {
+            feedbackMsg.textContent = 'Berhasil! Anda akan menerima update batch berikutnya.';
+            feedbackMsg.className = 'form-feedback success';
+            newsletterForm.reset();
+            setTimeout(() => {
+              feedbackMsg.textContent = '';
+            }, 5000);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
