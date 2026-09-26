@@ -1,1967 +1,669 @@
 <!DOCTYPE html>
 
-<html class="" lang="id" style=""><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="MentorVerse - Platform Akselerasi Karier Digital melalui 1-on-1 Mentorship, Bedah Portofolio ATS, dan Mock Technical Interview bersama praktisi industri teknologi." name="description"/>
-<title>MentorVerse | Akselerasi Karier Digital Bersama Mentor Industri</title>
-<!-- Google Fonts: Inter -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-    /* DESIGN SYSTEM TOKENS & RESET */
-    :root {
-      --primary: #008B99;
-      --primary-hover: #007682;
-      --primary-dark: #0A2228;
-      --primary-tint: #E0F4F7;
-      --secondary: #F2831F;
-      --secondary-hover: #D97013;
-      --secondary-tint: #FDEBD9;
-      --accent-coral: #F2831F;
-      --accent-amber: #F59E0B;
-      --success: #10B981;
-      --canvas: #F4F7FB;
-      --surface: #FFFFFF;
-      --surface-container-low: #E0F4F7;
-      --text-primary: #1E293B;
-      --text-secondary: #64748B;
-      --border-color: #E2E8F0;
+<html class="" lang="id" style="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta
+    content="MentorVerse - Platform Akselerasi Karier Digital melalui 1-on-1 Mentorship, Bedah Portofolio ATS, dan Mock Technical Interview bersama praktisi industri teknologi."
+    name="description" />
+  <title>MentorVerse | Akselerasi Karier Digital Bersama Mentor Industri</title>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css"> -->
+  <style>
 
-      --space-xs: 4px;
-      --space-sm: 8px;
-      --space-md: 16px;
-      --space-lg: 24px;
-      --space-xl: 32px;
-      --space-2xl: 48px;
-      --space-3xl: 80px;
 
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --radius-pill: 9999px;
 
-      --shadow-sm: 0 2px 6px rgba(0, 139, 153, 0.05);
-      --shadow-md: 0 10px 30px rgba(0, 139, 153, 0.08);
-      --shadow-lg: 0 16px 36px rgba(0, 139, 153, 0.12);
-
-      --font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background-color: var(--canvas);
-      color: var(--text-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      width: 100%;
-    }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 24px;
-      border-radius: var(--radius-md);
-      font-size: 0.9375rem;
-      font-weight: 700;
-      transition: var(--transition);
-      text-align: center;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(0, 139, 153, 0.28);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 139, 153, 0.38);
-    }
-
-    .btn-secondary {
-      background-color: var(--primary-dark);
-      color: #FFFFFF;
-    }
-
-    .btn-secondary:hover {
-      background-color: #12343d;
-      transform: translateY(-2px);
-    }
-
-    .btn-accent {
-      background-color: var(--secondary);
-      color: #FFFFFF;
-      padding: 12px 18px;
-      border-radius: var(--radius-md);
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-align: center;
-      transition: var(--transition);
-      display: inline-block;
-      box-shadow: 0 4px 12px rgba(242, 131, 31, 0.28);
-    }
-
-    .btn-accent:hover {
-      background-color: var(--secondary-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(242, 131, 31, 0.38);
-    }
-
-    /* ========================================================================
-       TOP UTILITY BAR (<header>)
-       ======================================================================== */
-    .top-utility-bar {
-      background-color: var(--primary-dark);
-      color: #94A3B8;
-      font-size: 0.8125rem;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .top-utility-bar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-utility-left, .top-utility-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .top-utility-link {
-      color: #CBD5E1;
-      transition: var(--transition);
-    }
-
-    .top-utility-link:hover {
-      color: #FFFFFF;
-    }
-
-    .auth-link {
-      color: #FFFFFF;
-      font-weight: 700;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 4px 12px;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-    }
-
-    .auth-link:hover {
-      background: var(--primary);
-    }
-
-    /* ========================================================================
-       MAIN NAVIGATION BAR (<nav>)
-       ======================================================================== */
-    .main-nav-bar {
-      background-color: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-color);
-      transition: var(--transition);
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      gap: 24px;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-    }
-
-    .brand-logo svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--primary);
-    }
-
-    .nav-drawer {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .nav-list {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-      position: relative;
-    }
-
-    /* Sliding Underline Indicator */
-    .nav-slider-indicator {
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary) 0%, #00b4c8 100%);
-      border-radius: var(--radius-pill);
-      box-shadow: 0 2px 8px rgba(0, 139, 153, 0.4);
-      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), width 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease;
-      pointer-events: none;
-      opacity: 0;
-      z-index: 2;
-    }
-
-    .nav-link {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: 8px 4px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .nav-link:hover {
-      color: var(--primary);
-      transform: translateY(-1px);
-    }
-
-    .nav-link.active {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-shrink: 0;
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      width: 28px;
-      height: 24px;
-      cursor: pointer;
-    }
-
-    .mobile-menu-toggle span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background-color: var(--text-primary);
-      border-radius: var(--radius-pill);
-      transition: var(--transition);
-    }
-
-    /* ========================================================================
-       BACK TO TOP FLOATING BUTTON
-       ======================================================================== */
-    .back-to-top-btn {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #008B99 0%, #006670 100%);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(0, 105, 115, 0.35), 0 2px 6px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      z-index: 999;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(16px) scale(0.9);
-      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  visibility 0.35s ease,
-                  box-shadow 0.25s ease;
-    }
-
-    .back-to-top-btn.is-visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-
-    .back-to-top-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 12px 28px rgba(0, 105, 115, 0.45), 0 4px 10px rgba(0, 0, 0, 0.12);
-      background: linear-gradient(135deg, #009cb0 0%, #007682 100%);
-    }
-
-    .back-to-top-btn:active {
-      transform: translateY(-1px) scale(0.98);
-    }
-
-    .back-to-top-btn svg {
-      width: 24px;
-      height: 24px;
-      fill: #FFFFFF;
-      transition: transform 0.2s ease;
-    }
-
-    .back-to-top-btn:hover svg {
-      transform: translateY(-2px);
-    }
-
-    /* Tooltip styling */
-    .back-to-top-btn .tooltip-text {
-      position: absolute;
-      right: calc(100% + 12px);
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(10, 34, 40, 0.92);
-      color: #FFFFFF;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 6px;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .back-to-top-btn .tooltip-text::after {
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent transparent transparent rgba(10, 34, 40, 0.92);
-    }
-
-    .back-to-top-btn:hover .tooltip-text {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(-50%) translateX(-4px);
-    }
-
-    /* ========================================================================
-       1. HERO SECTION (<section id="hero">)
-       ======================================================================== */
-    .hero-section {
-      padding: var(--space-3xl) 0;
-      position: relative;
-      background: radial-gradient(circle at 85% 20%, rgba(0, 139, 153, 0.08) 0%, transparent 60%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      background-color: var(--secondary-tint);
-      color: var(--secondary);
-      font-size: 0.8125rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
-      border: 1px solid rgba(242, 131, 31, 0.25);
-    }
-
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--secondary);
-      display: inline-block;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 20px;
-    }
-
-    .hero-title span {
-      color: var(--primary);
-    }
-
-    .hero-description {
-      font-size: 1.125rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    .hero-checklist {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .checklist-item svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--primary);
-      flex-shrink: 0;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    /* Hero Visual Card */
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-visual-card {
-      background: linear-gradient(135deg, #FFFFFF 0%, #F5FBFC 100%);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      padding: 36px 32px;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: visible;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.08em;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-headline {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      line-height: 1.3;
-      margin-bottom: 28px;
-    }
-
-    .hero-metric-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      background-color: var(--primary-tint);
-      border-radius: var(--radius-md);
-      margin-bottom: 24px;
-    }
-
-    .metric-value {
-      font-size: 1.875rem;
-      font-weight: 800;
-      color: var(--primary);
-      line-height: 1.1;
-    }
-
-    .metric-label {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-top: 4px;
-    }
-
-    .floating-pill {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-pill);
-      padding: 10px 18px;
-      box-shadow: var(--shadow-md);
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-top: 12px;
-      transition: var(--transition);
-    }
-
-    .floating-pill:hover {
-      transform: translateX(4px);
-    }
-
-    .floating-pill-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .floating-pill-dot.blue {
-      background-color: var(--primary);
-    }
-
-    .floating-pill-dot.coral {
-      background-color: var(--secondary);
-    }
-
-    /* ========================================================================
-       2. TRUST PROPOSITION STRIP (<section class="trust-strip">)
-       ======================================================================== */
-    .trust-strip {
-      background-color: var(--surface);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 28px 0;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 24px;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 0.9375rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .trust-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      background-color: var(--primary-tint);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-icon-box svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--primary);
-    }
-
-    /* ========================================================================
-       3. ABOUT SECTION (<section id="about">)
-       ======================================================================== */
-    .about-section {
-      padding: var(--space-3xl) 0;
-      background-color: var(--canvas);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .about-collage {
-      position: relative;
-    }
-
-    .collage-badge {
-      display: inline-flex;
-      background-color: var(--primary);
-      color: #FFFFFF;
-      font-size: 0.8125rem;
-      font-weight: 800;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 4px 12px rgba(0, 139, 153, 0.3);
-      position: absolute;
-      top: -14px;
-      right: 20px;
-      z-index: 2;
-    }
-
-    .collage-card {
-      background: linear-gradient(145deg, var(--primary-dark) 0%, #133942 100%);
-      border-radius: var(--radius-lg);
-      padding: 36px 32px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .collage-card-inner {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .section-tag {
-      font-size: 0.8125rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--primary);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
-
-    .section-desc {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .about-mission-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 32px;
-    }
-
-    .about-mission-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .mission-bullet-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: var(--primary-tint);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9375rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .mission-text h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .mission-text p {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    /* ========================================================================
-       4. MAIN CONTENT & SIDEBAR CONTAINER (70% Content vs 30% Sidebar)
-       ======================================================================== */
-    .layout-wrapper-section {
-      padding: var(--space-xl) 0 var(--space-3xl);
-      background-color: var(--canvas);
-    }
-
-    .main-sidebar-grid {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 36px;
-      align-items: start;
-    }
-
-    /* Filter Tabs */
-    .filter-tabs-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .filter-pill {
-      padding: 8px 18px;
-      border-radius: var(--radius-pill);
-      background-color: var(--surface);
-      border: 1px solid var(--border-color);
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      transition: var(--transition);
-    }
-
-    .filter-pill:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .filter-pill.active {
-      background-color: var(--primary);
-      color: #FFFFFF;
-      border-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(0, 139, 153, 0.25);
-    }
-
-    /* Program Cards Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-bottom: 64px;
-    }
-
-    .service-card {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
-    }
-
-    .card-top-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .duration-tag {
-      background-color: var(--secondary-tint);
-      color: var(--secondary);
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-    }
-
-    .rating-badge {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--accent-amber);
-      font-size: 0.875rem;
-      font-weight: 700;
-    }
-
-    .rating-badge svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--accent-amber);
-    }
-
-    .service-card-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .service-card-desc {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .mentor-profile-strip {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      border-top: 1px dashed var(--border-color);
-      border-bottom: 1px dashed var(--border-color);
-      margin-bottom: 16px;
-    }
-
-    .mentor-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background-color: var(--primary-tint);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.875rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mentor-meta-info h4 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .mentor-meta-info p {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-    }
-
-    .card-footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .price-tag {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    /* Founders Section */
-    #founders {
-      margin-bottom: 64px;
-    }
-
-    .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .founder-card {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 24px 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    .founder-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .founder-avatar-frame {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-tint) 0%, #b8e8ee 100%);
-      color: var(--primary);
-      font-size: 2rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      border: 3px solid #FFFFFF;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .founder-name {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .founder-role-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      background-color: var(--primary-tint);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-
-    .founder-bio {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      margin-bottom: 16px;
-      flex-grow: 1;
-    }
-
-    .founder-social-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .social-btn {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      background-color: var(--canvas);
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-color);
-      transition: var(--transition);
-    }
-
-    .social-btn:hover {
-      background-color: var(--primary);
-      color: #FFFFFF;
-      border-color: var(--primary);
-    }
-
-    /* Testimonials Section */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .testimonial-figure {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .testimonial-quote {
-      font-size: 0.9375rem;
-      color: var(--text-primary);
-      font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .author-initial {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--primary-tint);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.8125rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .author-info h4 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .author-info p {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-    }
-
-    /* =================== SIDEBAR (<aside>) (30%) =================== */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .sidebar-widget {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .sidebar-widget:first-child {
-      background: linear-gradient(145deg, #FFFFFF 0%, #F5FBFC 100%);
-      border: 1px solid #B8E5EB;
-    }
-
-    .widget-header {
-      margin-bottom: 12px;
-    }
-
-    .widget-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .webinar-date-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 8px;
-      letter-spacing: 0.05em;
-    }
-
-    .webinar-topic {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .webinar-speaker {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-
-    .tips-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .tip-item {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .tip-item::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .newsletter-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      font-size: 0.875rem;
-      font-family: inherit;
-      color: var(--text-primary);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .form-group input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 139, 153, 0.15);
-    }
-
-    .form-feedback {
-      font-size: 0.75rem;
-      line-height: 1.4;
-    }
-
-    .form-feedback.error {
-      color: #E11D48;
-    }
-
-    .form-feedback.success {
-      color: var(--primary);
-    }
-
-    /* ========================================================================
-       FOOTER (<footer>)
-       ======================================================================== */
-    .main-footer {
-      background-color: var(--primary-dark);
-      color: #94A3B8;
-      padding: var(--space-3xl) 0 var(--space-xl);
-      border-top: 1px solid #13343C;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr repeat(3, 1fr);
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-
-    .footer-col-brand .brand-logo {
-      color: #FFFFFF;
-      margin-bottom: 16px;
-    }
-
-    .footer-col-brand p {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .footer-title {
-      color: #FFFFFF;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-link {
-      font-size: 0.875rem;
-      color: #94A3B8;
-      transition: var(--transition);
-    }
-
-    .footer-link:hover {
-      color: #FFFFFF;
-    }
-
-    .footer-bottom-row {
-      padding-top: 24px;
-      border-top: 1px solid #13343C;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8125rem;
-    }
-
-    .footer-social-icons {
-      display: flex;
-      gap: 16px;
-    }
-
-    .footer-social-icons a {
-      color: #94A3B8;
-      transition: var(--transition);
-    }
-
-    .footer-social-icons a:hover {
-      color: #FFFFFF;
-    }
-
-    /* Respect Reduced Motion Preferences */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .nav-slider-indicator, .back-to-top-btn {
-        transition: none !important;
-      }
-    }
-
-    /* ========================================================================
-       RESPONSIVE CSS
-       ======================================================================== */
-    @media (max-width: 1024px) {
-      .main-sidebar-grid {
-        grid-template-columns: 1fr;
-      }
-      .trust-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .founders-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .top-utility-bar {
-        display: none;
-      }
-
-      .nav-drawer {
-        display: none;
-      }
-
-      .nav-drawer.is-active {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background-color: #FFFFFF;
-        padding: 24px;
-        box-shadow: var(--shadow-lg);
-        border-bottom: 1px solid var(--border-color);
-        gap: 16px;
-      }
-
-      .nav-list {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .nav-slider-indicator {
-        display: none;
-      }
-
-      .mobile-menu-toggle {
-        display: flex;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .hero-title {
-        font-size: 2.25rem;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .founders-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .hero-cta-group {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .back-to-top-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-      }
-    }
   </style>
 </head>
+
 <body>
-<!-- ========================================================================
+  <!-- ========================================================================
        TOP UTILITY BAR (<header>)
        ======================================================================== -->
-<!-- ========================================================================
+  <!-- ========================================================================
        MAIN NAVIGATION BAR (<nav>)
        ======================================================================== -->
-<nav aria-label="Navigasi Utama Situs" class="main-nav-bar">
-<div class="container nav-container"><a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;"><div class="" style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, rgb(0, 139, 153) 0%, rgb(0, 118, 130) 100%); display: flex; align-items: center; justify-content: center; box-shadow: rgba(0, 139, 153, 0.35) 0px 4px 10px; flex-shrink: 0;"><svg style="width: 20px; height: 20px; fill: #ffffff;" viewbox="0 0 24 24"><path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"></path></svg></div><span class="" style="font-size: 1.25rem; font-weight: 800; color: rgb(11, 28, 48); letter-spacing: -0.02em;">Mentor<span class="" style="color: rgb(0, 139, 153);">Verse</span></span></a>
-<div class="nav-drawer" id="mainNavDrawer">
-<ul class="nav-list" id="navMenuList">
-<!-- Animated sliding underline indicator -->
-<div aria-hidden="true" class="nav-slider-indicator" id="navSliderIndicator"></div>
-<li><a class="nav-link active" href="#hero">Beranda</a></li>
-<li><a class="nav-link" href="#about">Tentang Kami</a></li>
-<li><a class="nav-link" href="#services">Program Mentoring</a></li>
-<li><a class="nav-link" href="#founders">Mentor &amp; Tim</a></li>
-<li><a class="nav-link" href="#testimonials">Testimoni</a></li>
-</ul>
-</div>
-<div class="nav-actions">
-<a class="btn" href="#services" style="background-color: rgb(0, 139, 153); color: rgb(255, 255, 255); padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.875rem; box-shadow: rgba(0, 139, 153, 0.3) 0px 4px 12px; text-decoration: none;">Jadwalkan Mentoring</a>
-<a class="btn" href="#login" style="background-color: rgb(255, 255, 255); color: rgb(30, 41, 59); border: 1px solid rgb(226, 232, 240); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;">Masuk</a>
-<button aria-controls="mainNavDrawer" aria-expanded="false" aria-label="Buka Menu Navigasi" class="mobile-menu-toggle" id="menuToggleBtn">
-<span></span>
-<span></span>
-<span></span>
-</button>
-</div></div>
-</nav>
-<!-- ========================================================================
+  <nav aria-label="Navigasi Utama Situs" class="main-nav-bar">
+    <div class="container nav-container"><a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero"
+        style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+        <div class=""
+          style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, rgb(0, 139, 153) 0%, rgb(0, 118, 130) 100%); display: flex; align-items: center; justify-content: center; box-shadow: rgba(0, 139, 153, 0.35) 0px 4px 10px; flex-shrink: 0;">
+          <svg style="width: 20px; height: 20px; fill: #ffffff;" viewbox="0 0 24 24">
+            <path
+              d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z">
+            </path>
+          </svg></div><span class=""
+          style="font-size: 1.25rem; font-weight: 800; color: rgb(11, 28, 48); letter-spacing: -0.02em;">Mentor<span
+            class="" style="color: rgb(0, 139, 153);">Verse</span></span>
+      </a>
+      <div class="nav-drawer" id="mainNavDrawer">
+        <ul class="nav-list" id="navMenuList">
+          <!-- Animated sliding underline indicator -->
+          <div aria-hidden="true" class="nav-slider-indicator" id="navSliderIndicator"></div>
+          <li><a class="nav-link active" href="#hero">Beranda</a></li>
+          <li><a class="nav-link" href="#about">Tentang Kami</a></li>
+          <li><a class="nav-link" href="#services">Program Mentoring</a></li>
+          <li><a class="nav-link" href="#founders">Mentor &amp; Tim</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimoni</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="#services"
+          style="background-color: rgb(0, 139, 153); color: rgb(255, 255, 255); padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.875rem; box-shadow: rgba(0, 139, 153, 0.3) 0px 4px 12px; text-decoration: none;">Jadwalkan
+          Mentoring</a>
+        <a class="btn" href="#login"
+          style="background-color: rgb(255, 255, 255); color: rgb(30, 41, 59); border: 1px solid rgb(226, 232, 240); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;">Masuk</a>
+        <button aria-controls="mainNavDrawer" aria-expanded="false" aria-label="Buka Menu Navigasi"
+          class="mobile-menu-toggle" id="menuToggleBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- ========================================================================
        MAIN CONTENT CONTAINER (<main>)
        ======================================================================== -->
-<main>
-<!-- 1. HERO SECTION (<section id="hero">) -->
-<section class="hero-section" id="hero">
-<div class="container hero-grid">
-<div class="hero-content">
-<div class="hero-badge-pill">
-<span class="hero-badge-dot"></span>
-<span class="">AKSELERASI KARIER DIGITAL 2026</span>
-</div>
-<h1 class="hero-title">Akselerasi Karier Digitalmu Bersama <span class="">Mentor Top Dunia Industri</span></h1>
-<p class="hero-description">
-            Jembatani kesenjangan kurikulum akademik dengan bimbingan 1-on-1 privat, bedah portofolio standar ATS, dan simulasi technical interview langsung dari praktisi teknologi terkemuka.
+  <main>
+    <!-- 1. HERO SECTION (<section id="hero">) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <span class="hero-badge-dot"></span>
+            <span class="">AKSELERASI KARIER DIGITAL 2026</span>
+          </div>
+          <h1 class="hero-title">Akselerasi Karier Digitalmu Bersama <span class="">Mentor Top Dunia Industri</span>
+          </h1>
+          <p class="hero-description">
+            Jembatani kesenjangan kurikulum akademik dengan bimbingan 1-on-1 privat, bedah portofolio standar ATS, dan
+            simulasi technical interview langsung dari praktisi teknologi terkemuka.
           </p>
-<ul class="hero-checklist">
-<li class="checklist-item">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path></svg>
-<span class="">Bimbingan 1-on-1 Bersama Senior Engineer &amp; Designer</span>
-</li>
-<li class="checklist-item">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path></svg>
-<span class="">Kurasi Portofolio Berstandar Industri Startup &amp; Big Tech</span>
-</li>
-<li class="checklist-item">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path></svg>
-<span class="">Simulasi Wawancara Kerja &amp; Negosiasi Penawaran Gaji</span>
-</li>
-</ul>
-<div class="hero-cta-group">
-<a class="btn btn-primary" href="#services">Jadwalkan Mentoring</a>
-<a class="btn btn-secondary" href="#about">Pelajari Program</a>
-</div>
-</div>
-<div class="hero-visual">
-<div class="hero-visual-card">
-<span class="hero-card-tag">BATCH Q1 2026 TELAH DIBUKA</span>
-<p class="hero-card-headline">Kurikulum Praktis Teruji untuk Mahasiswa &amp; Career Switcher</p>
-<div class="hero-metric-row">
-<div>
-<p class="metric-value">94.8%</p>
-<p class="metric-label">Tingkat Kelolosan Kerja</p>
-</div>
-<div>
-<p class="metric-value">&lt; 90 Hari</p>
-<p class="metric-label">Rata-rata Waktu Diterima</p>
-</div>
-</div>
-<div class="floating-pill">
-<span class="floating-pill-dot blue"></span>
-<span class="">16,500+ Mentee Terbimbing</span>
-</div>
-<div class="floating-pill">
-<span class="floating-pill-dot coral"></span>
-<span class="">150+ Top Tech Mentors Aktif</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 2. TRUST PROPOSITION STRIP (<section class="trust-strip">) -->
-<section aria-label="Keunggulan Utama Platform" class="trust-strip">
-<div class="container trust-grid">
-<div class="trust-item">
-<div class="trust-icon-box">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
-</div>
-<span class="">1-on-1 Career Mentoring</span>
-</div>
-<div class="trust-item">
-<div class="trust-icon-box">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.7 0-1.1.1 1.3.9 2.1 2.1 2.1 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"></path></svg>
-</div>
-<span class="">Akses Komunitas Seumur Hidup</span>
-</div>
-<div class="trust-item">
-<div class="trust-icon-box">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
-</div>
-<span class="">Kurasi Portofolio Industri</span>
-</div>
-<div class="trust-item">
-<div class="trust-icon-box">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4z"></path></svg>
-</div>
-<span class="">Dukungan Mock Interview</span>
-</div>
-<div class="trust-item">
-<div class="trust-icon-box">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17.9V18h-2v1.9c-4-.5-7.4-3.9-7.9-7.9H5v-2H3.1c.5-4 3.9-7.4 7.9-7.9V5h2V3.1c4 .5 7.4 3.9 7.9 7.9H19v2h1.9c-.5 4-3.9 7.4-7.9 7.9z"></path></svg>
-</div>
-<span class="">Jaringan Kerja Mitra Startup</span>
-</div>
-</div>
-</section>
-<!-- 3. ABOUT SECTION (<section id="about">) -->
-<section class="about-section" id="about">
-<div class="container about-grid">
-<div class="about-collage">
-<div class="collage-badge">24+ Mitra Tech Startup</div>
-<div class="collage-card" style="padding: 0px; overflow: hidden; border-radius: 16px; box-shadow: rgba(0, 139, 153, 0.12) 0px 16px 36px; border: 1px solid rgb(226, 232, 240);"><img alt="Diskusi dan kolaborasi tim teknologi di MentorVerse" class="collage-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62yMz6_iHUEjZb0lwALKfkH6EJH1w6-INl-vblcrQRi6jjL-DF5fwmRAuJdpi4jNpoOH7XdnamKRIQLOEMprgGXqR4MZcmRWHbDHDPIHPt0Ak8DTU4bOXAMhyyA_dkoNghlDBvKC8Il78JiKKHYBCIjST122CzYQEN90q1XelrMf7AAUdjj-B98gIS3od2davU1JkAB8vSwYHNJuP2tdkpPrzP8YY2zXNTZVmkFfdOMpMf1HpWt5L" style="width: 100%; height: 100%; min-height: 280px; max-height: 380px; object-fit: cover; display: block; border-radius: 16px;"/></div>
-</div>
-<div class="about-text-column">
-<span class="section-tag">TENTANG MENTORVERSE</span>
-<h2 class="section-title">Jembatani Kesenjangan Akademik dengan Kebutuhan Riil Industri Teknologi</h2>
-<p class="section-desc">
-            Banyak lulusan perguruan tinggi memiliki nilai akademik gemilang, namun gagap saat menghadapi tantangan wawancara teknis dan standar pengerjaan kode profesional. MentorVerse didirikan untuk memangkas *gap* tersebut secara terukur.
+          <ul class="hero-checklist">
+            <li class="checklist-item">
+              <svg aria-hidden="true" viewbox="0 0 20 20">
+                <path
+                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
+                </path>
+              </svg>
+              <span class="">Bimbingan 1-on-1 Bersama Senior Engineer &amp; Designer</span>
+            </li>
+            <li class="checklist-item">
+              <svg aria-hidden="true" viewbox="0 0 20 20">
+                <path
+                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
+                </path>
+              </svg>
+              <span class="">Kurasi Portofolio Berstandar Industri Startup &amp; Big Tech</span>
+            </li>
+            <li class="checklist-item">
+              <svg aria-hidden="true" viewbox="0 0 20 20">
+                <path
+                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
+                </path>
+              </svg>
+              <span class="">Simulasi Wawancara Kerja &amp; Negosiasi Penawaran Gaji</span>
+            </li>
+          </ul>
+          <div class="hero-cta-group">
+            <a class="btn btn-primary" href="#services">Jadwalkan Mentoring</a>
+            <a class="btn btn-secondary" href="#about">Pelajari Program</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <span class="hero-card-tag">BATCH Q1 2026 TELAH DIBUKA</span>
+            <p class="hero-card-headline">Kurikulum Praktis Teruji untuk Mahasiswa &amp; Career Switcher</p>
+            <div class="hero-metric-row">
+              <div>
+                <p class="metric-value">94.8%</p>
+                <p class="metric-label">Tingkat Kelolosan Kerja</p>
+              </div>
+              <div>
+                <p class="metric-value">&lt; 90 Hari</p>
+                <p class="metric-label">Rata-rata Waktu Diterima</p>
+              </div>
+            </div>
+            <div class="floating-pill">
+              <span class="floating-pill-dot blue"></span>
+              <span class="">16,500+ Mentee Terbimbing</span>
+            </div>
+            <div class="floating-pill">
+              <span class="floating-pill-dot coral"></span>
+              <span class="">150+ Top Tech Mentors Aktif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 2. TRUST PROPOSITION STRIP (<section class="trust-strip">) -->
+    <section aria-label="Keunggulan Utama Platform" class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path
+                d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z">
+              </path>
+            </svg>
+          </div>
+          <span class="">1-on-1 Career Mentoring</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path
+                d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.7 0-1.1.1 1.3.9 2.1 2.1 2.1 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z">
+              </path>
+            </svg>
+          </div>
+          <span class="">Akses Komunitas Seumur Hidup</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z">
+              </path>
+            </svg>
+          </div>
+          <span class="">Kurasi Portofolio Industri</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path
+                d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4z">
+              </path>
+            </svg>
+          </div>
+          <span class="">Dukungan Mock Interview</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path
+                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17.9V18h-2v1.9c-4-.5-7.4-3.9-7.9-7.9H5v-2H3.1c.5-4 3.9-7.4 7.9-7.9V5h2V3.1c4 .5 7.4 3.9 7.9 7.9H19v2h1.9c-.5 4-3.9 7.4-7.9 7.9z">
+              </path>
+            </svg>
+          </div>
+          <span class="">Jaringan Kerja Mitra Startup</span>
+        </div>
+      </div>
+    </section>
+    <!-- 3. ABOUT SECTION (<section id="about">) -->
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-collage">
+          <div class="collage-badge">24+ Mitra Tech Startup</div>
+          <div class="collage-card"
+            style="padding: 0px; overflow: hidden; border-radius: 16px; box-shadow: rgba(0, 139, 153, 0.12) 0px 16px 36px; border: 1px solid rgb(226, 232, 240);">
+            <img alt="Diskusi dan kolaborasi tim teknologi di MentorVerse" class="collage-img"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62yMz6_iHUEjZb0lwALKfkH6EJH1w6-INl-vblcrQRi6jjL-DF5fwmRAuJdpi4jNpoOH7XdnamKRIQLOEMprgGXqR4MZcmRWHbDHDPIHPt0Ak8DTU4bOXAMhyyA_dkoNghlDBvKC8Il78JiKKHYBCIjST122CzYQEN90q1XelrMf7AAUdjj-B98gIS3od2davU1JkAB8vSwYHNJuP2tdkpPrzP8YY2zXNTZVmkFfdOMpMf1HpWt5L"
+              style="width: 100%; height: 100%; min-height: 280px; max-height: 380px; object-fit: cover; display: block; border-radius: 16px;" />
+          </div>
+        </div>
+        <div class="about-text-column">
+          <span class="section-tag">TENTANG MENTORVERSE</span>
+          <h2 class="section-title">Jembatani Kesenjangan Akademik dengan Kebutuhan Riil Industri Teknologi</h2>
+          <p class="section-desc">
+            Banyak lulusan perguruan tinggi memiliki nilai akademik gemilang, namun gagap saat menghadapi tantangan
+            wawancara teknis dan standar pengerjaan kode profesional. MentorVerse didirikan untuk memangkas *gap*
+            tersebut secara terukur.
           </p>
-<div class="about-mission-list">
-<div class="about-mission-item">
-<div class="mission-bullet-num">1</div>
-<div class="mission-text">
-<h3 class="">Bimbingan Terarah dari Praktisi Terpilih</h3>
-<p class="">Belajar langsung dari Tech Lead, Product Manager, dan Principal Designer yang aktif membangun produk skala jutaan pengguna.</p>
-</div>
-</div>
-<div class="about-mission-item">
-<div class="mission-bullet-num">2</div>
-<div class="mission-text">
-<h3 class="">Kurasi Resume &amp; Portofolio Lolos ATS</h3>
-<p class="">Studi kasus nyata pada portofolio Anda dibedah menyeluruh agar menarik perhatian recruiter tech company dalam 6 detik pertama.</p>
-</div>
-</div>
-<div class="about-mission-item">
-<div class="mission-bullet-num">3</div>
-<div class="mission-text">
-<h3 class="">Jalur Rekomendasi Kerja Khusus</h3>
-<p class="">Mentee berkinerja tinggi langsung direkomendasikan ke ekosistem jaringan perusahaan mitra startup teknologi kami.</p>
-</div>
-</div>
-</div>
-<a class="btn btn-primary" href="#services">Eksplorasi Katalog Layanan</a>
-</div>
-</div>
-</section>
-<!-- 4. MAIN CONTENT & SIDEBAR CONTAINER (70% Content vs 30% Sidebar) -->
-<section class="layout-wrapper-section">
-<div class="container main-sidebar-grid">
-<!-- =================== KONTEN UTAMA (70%) =================== -->
-<div class="content-primary">
-<!-- A. Services Catalog Section -->
-<section aria-labelledby="servicesTitle" id="services">
-<span class="section-tag">PROGRAM UNGGULAN</span>
-<h2 class="section-title" id="servicesTitle">Katalog Program Akselerasi Karier</h2>
-<p class="section-desc">Pilih paket bimbingan intensif yang disesuaikan dengan kebutuhan akselerasi karier teknologi Anda saat ini.</p>
-<!-- Filter Pills -->
-<div aria-label="Filter Kategori Program" class="filter-tabs-nav" role="tablist">
-<button aria-selected="false" class="filter-pill" data-filter="all" role="tab">Semua Program</button>
-<button aria-selected="true" class="filter-pill active" data-filter="engineering" role="tab">Software Engineering</button>
-<button aria-selected="false" class="filter-pill" data-filter="design" role="tab">UI/UX Design</button>
-<button aria-selected="false" class="filter-pill" data-filter="data" role="tab">Data &amp; AI</button>
-<button aria-selected="false" class="filter-pill" data-filter="product" role="tab">Product Management</button>
-</div>
-<!-- Program Cards Grid -->
-<div class="services-grid">
-<!-- Card 1 -->
-<article class="service-card" data-category="engineering" style="display: flex;"><div class="" style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;"><img alt="1-on-1 Career Mentoring Fullstack Coding Setup" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1V0rKN3gtxMxRAYh3zMajcaQKMVL-FBzBirIREtNlbCdxOZm5FkJQhtTgpkgzdr-UdbO6jj6910Rq5XGjjSYry-S742-eh3nUSbrYHWkbBpEd1yXupi0j87anKIWj4GrWb7LPd7daXx9W691MFgFBflYnp5fpAr1eCw1Sg8WDCXboPY7FZnjXeK8zxN4KsZAcll3npArwrT2-G57y5c9Vs6tgwKSE_sRbbfWhTS3h_0BZg6DLwQ2kLJfA" style="width: 100%; height: 100%; object-fit: cover; display: block;"/></div>
-<div>
-<div class="card-top-meta">
-<span class="duration-tag">04 MINGGU INTENSIF</span>
-<div class="rating-badge">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
-<span class="">4.9 (148 ulasan)</span>
-</div>
-</div>
-<h3 class="service-card-title">1-on-1 Career Mentoring: Fullstack Path</h3>
-<p class="service-card-desc">Sesi privat terstruktur merancang personal career roadmap, bedah arsitektur sistem, dan evaluasi rutin kemajuan coding Anda.</p>
-</div>
-<div>
-<div class="mentor-profile-strip">
-<div class="mentor-avatar">KP</div>
-<div class="mentor-meta-info">
-<h4 class="">Kevin Perry</h4>
-<p class="">Lead Engineer @ Tech Unicorn</p>
-</div>
-</div>
-<div class="card-footer-row">
-<span class="price-tag">Rp 499.000</span>
-<a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
-</div>
-</div>
-</article>
-<!-- Card 2 -->
-<article class="service-card" data-category="design" style="display: none;"><div class="" style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;"><img alt="Portfolio and Resume Design Review Workspace" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1WvdgIa1MJ7svD_crv5JTojb8oWirz0pJcZlmtXKAQ-7n0KMvtW-PeuRkr3CDGzrv7z_SW3CUXcMwvLeVY5pNcWKEu4CezjcR1e1_VTkkCVnbcsQOCkZav0-bHFgCkkoQSMUtsBLGlq-jQ-Zeyxffkw35Lfy5R-BqFL6GDVK4SANh2Lifiumm5695F3JJrXu6HiMyHbJ-P_G6_O5s9qB55LL3iP7nCLBHuLxu8E1Y0qCR0rTR-fd0w6Yp0" style="width: 100%; height: 100%; object-fit: cover; display: block;"/></div>
-<div>
-<div class="card-top-meta">
-<span class="duration-tag">02 MINGGU REVIEW</span>
-<div class="rating-badge">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
-<span class="">5.0 (92 ulasan)</span>
-</div>
-</div>
-<h3 class="service-card-title">Portfolio &amp; Resume ATS Deep-Audit</h3>
-<p class="service-card-desc">Review baris-per-baris resume dan studi kasus portofolio desain Anda agar lolos pemindaian ATS dan memikat Hiring Manager.</p>
-</div>
-<div>
-<div class="mentor-profile-strip">
-<div class="mentor-avatar">AA</div>
-<div class="mentor-meta-info">
-<h4 class="">Alvi Alexis</h4>
-<p class="">Senior Product Designer</p>
-</div>
-</div>
-<div class="card-footer-row">
-<span class="price-tag">Rp 299.000</span>
-<a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
-</div>
-</div>
-</article>
-<!-- Card 3 -->
-<article class="service-card" data-category="engineering" style="display: flex;"><div class="" style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;"><img alt="Mock Technical System Design Whiteboard Session" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1WRn3ffRweT_oqkOnddwj-8yIVWGbGo5bH5zf_F-L2VbcZMsErd5JsSLq_vG44nR8UuOnVqwO63Jwi2FpKDlocRCG7evZABZNIy4l8_X1bXC5uYgazxRu5mJta0DS9HX8LWcGLLPfeK59o3j-w-fDtv-h0lDbkBnW91mmRXMJHPK5X4Fu-3acumgoU-kQwW4zSvZo5mA5E-DcY7e9_3cKHjpMzcdG9n_n2xAkYDQkoFr-AYdjyokCGAVA" style="width: 100%; height: 100%; object-fit: cover; display: block;"/></div>
-<div>
-<div class="card-top-meta">
-<span class="duration-tag">LIVE SIMULATION</span>
-<div class="rating-badge">
-<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
-<span class="">4.9 (115 ulasan)</span>
-</div>
-</div>
-<h3 class="service-card-title">Mock Technical &amp; System Design Interview</h3>
-<p class="service-card-desc">Simulasi live coding teknis 90 menit dan studi kasus arsitektur sistem dengan feedback tertulis mendalam setelah sesi selesai.</p>
-</div>
-<div>
-<div class="mentor-profile-strip">
-<div class="mentor-avatar">CH</div>
-<div class="mentor-meta-info">
-<h4 class="">Chaplin</h4>
-<p class="">Principal Frontend Engineer</p>
-</div>
-</div>
-<div class="card-footer-row">
-<span class="price-tag">Rp 399.000</span>
-<a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
-</div>
-</div>
-</article>
-<article class="service-card" data-category="data"><div style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;"><img alt="Data Science &amp; AI Engineering: Real-World ML Ops" class="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQc120vdu4RY_4O0FmyVN0P4GL7jVYFQwvGHAYH0RBVc3JigOzSPKjxQ6hv1mtT--1u5Ea-I5jt7bDg9oB55ZJKot3i1pDXz1GS_ZpC-cIkxysIZ-RsrTeQa7gZ_t8T7PB4N8AV6-SW-9GMROMV7zVrQq3i3TiTqaGyt06_D54xlIDuaGQSGJsqe5Aa_ZPUu33LrwCD8B6Snd0ONEkcergAn-Wf94-n_X0iJ8_SUscnHR4M0gS1gbv" style="width: 100%; height: 100%; object-fit: cover; display: block;"/></div><div><div class="card-top-meta"><span class="duration-tag">06 MINGGU INTENSIF</span><div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg><span class="">4.9 (110 ulasan)</span></div></div><h3 class="service-card-title">Data Science &amp; AI Engineering: Real-World ML Ops</h3><p class="service-card-desc">Bimbingan intensif end-to-end membangun pipeline machine learning, feature engineering, evaluasi model, dan deployment model ke skala produksi.</p></div><div><div class="mentor-profile-strip"><div class="mentor-avatar">DA</div><div class="mentor-meta-info"><h4 class="">Farhan Rizky</h4><p class="">Senior AI Engineer @ Global Tech</p></div></div><div class="card-footer-row"><div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 549.000</span><span class="" style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp 1.100.000</span></div><a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a></div></div></article><article class="service-card" data-category="product"><div style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;"><img alt="Product Management Mastery &amp; Product Discovery" class="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGic29N__nDRwrRub-VClz6MHdcebEB3uE2gu6YxUJN4ANz66P-Dzqegg8rxLUJuMVVOCm6BE4KHwwu0KQ6tZZy2uheqU7f6yG3RZ_thvZ4PChvkgUKt7DUB4ZvahmWQqOEJiM-WkaGx2bKUx7SwPDJPObN3Te2u1EPBnw-mglJtf-suQnD0_AaQyA1gwhFhoLAOMuf80LneceTY0K6tmVBN-ImxT7i3jGYsvbTKKflFY91NplvE85" style="width: 100%; height: 100%; object-fit: cover; display: block;"/></div><div><div class="card-top-meta"><span class="duration-tag">04 MINGGU STRATEGI</span><div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg><span class="">5.0 (88 ulasan)</span></div></div><h3 class="service-card-title">Product Management Mastery &amp; Product Discovery</h3><p class="service-card-desc">Menguasai pembuatan PRD berstandar internasional, analisis metrik North Star, prioritisasi backlog dengan RICE framework, dan simulasi presentasi roadmap.</p></div><div><div class="mentor-profile-strip"><div class="mentor-avatar">PM</div><div class="mentor-meta-info"><h4 class="">Sarah Nabila</h4><p class="">Principal Product Manager</p></div></div><div class="card-footer-row"><div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 479.000</span><span class="" style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp 950.000</span></div><a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a></div></div></article></div>
-</section>
-<!-- B. Founders Section (<section id="founders">) -->
-<section aria-labelledby="foundersTitle" id="founders">
-<span class="section-tag">DEWAN PENDIRI</span>
-<h2 class="section-title" id="foundersTitle">Dipimpin oleh Tim Inovator Muda Berdedikasi</h2>
-<p class="section-desc">Masing-masing pendiri membawa keahlian fungsional di bidang kepemimpinan produk, arsitektur sistem, dan rekayasa antarmuka digital.</p>
-<div class="founders-grid">
-<!-- Founder 1 -->
-<article class="founder-card">
-<div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img alt="Rakha - Chief Executive Officer" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1X73oQ5gDmwqAudpts_7Ngy2PNmzl_2yrZooyb1hZznlqUM22ep2h7RjvYCgtFxdgJ50hT1auEDkw7dci5KXszeffPFE40gKskQSF8GGZx-Fim5i_a1tzdyJXNpOMsFbI1KgRMpXTJriTogxOgMTeaqfSP0HaG_Wwml9lIBnL7inoaK6HXFuuZb-vJ2qAWTMPHRsFAnmKIWpEXm5xLbNr-vBgUG11cNwQ8iJ9KeDb1LsPz9hoBf1J2SFA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;"/></div>
-<h3 class="founder-name">Rakha</h3>
-<span class="founder-role-badge">Chief Executive Officer</span>
-<p class="founder-bio">Memimpin arah visi strategis produk MentorVerse, kemitraan ekosistem industri digital, dan pengawasan arsitektur semantik standar W3C.</p>
-<div class="founder-social-links">
-<a aria-label="Profil LinkedIn Rakha" class="social-btn" href="#linkedin">LinkedIn</a>
-<a aria-label="Profil GitHub Rakha" class="social-btn" href="#github">GitHub</a>
-</div>
-</article>
-<!-- Founder 2 -->
-<article class="founder-card">
-<div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img alt="Alvi - Chief Technology Officer" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1VhaHwg4jfPa5W_yBCl6SwaGdySvIs2zc8NNsFqytsBnzCw9ZUJdsew4SY6alzQEf3PMQuR4YyzUp4rfJ3KesgsCyKXeIOuwll3A0uloCoIMiDh5Ujb9EgDXhIXZ1NW4MPc7d18Sw447kLCrIx0da27ecrRZ5kh5R7kHYrItn1UE-r3i7yivO0efZv_CTKnBCo6fab34DcgcHgdyxU5DPzXz57wlbWDksN-WXFwSf5VuC2M6WadLgl5fhc" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;"/></div>
-<h3 class="founder-name">Alvi</h3>
-<span class="founder-role-badge">Chief Technology Officer</span>
-<p class="founder-bio">Merancang fondasi sistem tampilan CSS berbasis token desain, skalabilitas kode Flexbox &amp; Grid, dan performa aksesibilitas WCAG AAA.</p>
-<div class="founder-social-links">
-<a aria-label="Profil LinkedIn Alvi" class="social-btn" href="#linkedin">LinkedIn</a>
-<a aria-label="Profil GitHub Alvi" class="social-btn" href="#github">GitHub</a>
-</div>
-</article>
-<!-- Founder 3 -->
-<article class="founder-card">
-<div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img alt="Chaplin - Lead UI/UX &amp; Frontend" class="" src="https://lh3.googleusercontent.com/aida/AEtjO1W8FQqc7asx1OPeUXSA2V_OFMtwKXyDHmtGbexuV1B_0St2VPqRjXIoYEyLfxzBxKenSB8Yok_sw_PEyqha9int2A7ikvAmlBc6jBM4di3WuEck3xHQaLjrO6idGFvGF27sWQXeprGi0xDr5Cs9Ff-wZT-lEy-Ca9CgIdnmXrUxH5oVmEG7JfMTrke4I4mwt80vZiEOKu6gD-0J6u7lAb-T6Dj9zXdguwcHhWULxkBQfz1wbqSjdX_epJw" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;"/></div>
-<h3 class="founder-name">Chaplin</h3>
-<span class="founder-role-badge">Lead UI/UX &amp; Frontend</span>
-<p class="founder-bio">Bertanggung jawab atas responsivitas multi-perangkat via media queries, pengalaman interaktif pengguna, dan modularitas Vanilla JavaScript.</p>
-<div class="founder-social-links">
-<a aria-label="Profil LinkedIn Chaplin" class="social-btn" href="#linkedin">LinkedIn</a>
-<a aria-label="Profil GitHub Chaplin" class="social-btn" href="#github">GitHub</a>
-</div>
-</article>
-</div>
-</section>
-<!-- C. Testimonials Section (<section id="testimonials">) -->
-<section aria-labelledby="testimonialsTitle" id="testimonials">
-<span class="section-tag">BUKTI KEBERHASILAN</span>
-<h2 class="section-title" id="testimonialsTitle">Apa Kata Alumni Mentee Kami?</h2>
-<p class="section-desc">Kisah nyata mereka yang berhasil meraih penawaran kerja pertama di industri teknologi.</p>
-<div class="testimonials-grid">
-<figure class="testimonial-figure">
-<blockquote class="testimonial-quote">
-                  "Bedah portofolio di MentorVerse benar-benar membuka mata saya. Dari 20 aplikasi yang saya kirim dan selalu ditolak, setelah perbaikan resume bersama Alvi, saya langsung dipanggil interview di 4 tech company!"
+          <div class="about-mission-list">
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">1</div>
+              <div class="mission-text">
+                <h3 class="">Bimbingan Terarah dari Praktisi Terpilih</h3>
+                <p class="">Belajar langsung dari Tech Lead, Product Manager, dan Principal Designer yang aktif
+                  membangun produk skala jutaan pengguna.</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">2</div>
+              <div class="mission-text">
+                <h3 class="">Kurasi Resume &amp; Portofolio Lolos ATS</h3>
+                <p class="">Studi kasus nyata pada portofolio Anda dibedah menyeluruh agar menarik perhatian recruiter
+                  tech company dalam 6 detik pertama.</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="mission-bullet-num">3</div>
+              <div class="mission-text">
+                <h3 class="">Jalur Rekomendasi Kerja Khusus</h3>
+                <p class="">Mentee berkinerja tinggi langsung direkomendasikan ke ekosistem jaringan perusahaan mitra
+                  startup teknologi kami.</p>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="#services">Eksplorasi Katalog Layanan</a>
+        </div>
+      </div>
+    </section>
+    <!-- 4. MAIN CONTENT & SIDEBAR CONTAINER (70% Content vs 30% Sidebar) -->
+    <section class="layout-wrapper-section">
+      <div class="container main-sidebar-grid">
+        <!-- =================== KONTEN UTAMA (70%) =================== -->
+        <div class="content-primary">
+          <!-- A. Services Catalog Section -->
+          <section aria-labelledby="servicesTitle" id="services">
+            <span class="section-tag">PROGRAM UNGGULAN</span>
+            <h2 class="section-title" id="servicesTitle">Katalog Program Akselerasi Karier</h2>
+            <p class="section-desc">Pilih paket bimbingan intensif yang disesuaikan dengan kebutuhan akselerasi karier
+              teknologi Anda saat ini.</p>
+            <!-- Filter Pills -->
+            <div aria-label="Filter Kategori Program" class="filter-tabs-nav" role="tablist">
+              <button aria-selected="false" class="filter-pill" data-filter="all" role="tab">Semua Program</button>
+              <button aria-selected="true" class="filter-pill active" data-filter="engineering" role="tab">Software
+                Engineering</button>
+              <button aria-selected="false" class="filter-pill" data-filter="design" role="tab">UI/UX Design</button>
+              <button aria-selected="false" class="filter-pill" data-filter="data" role="tab">Data &amp; AI</button>
+              <button aria-selected="false" class="filter-pill" data-filter="product" role="tab">Product
+                Management</button>
+            </div>
+            <!-- Program Cards Grid -->
+            <div class="services-grid">
+              <!-- Card 1 -->
+              <article class="service-card" data-category="engineering" style="display: flex;">
+                <div class=""
+                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
+                  <img alt="1-on-1 Career Mentoring Fullstack Coding Setup" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1V0rKN3gtxMxRAYh3zMajcaQKMVL-FBzBirIREtNlbCdxOZm5FkJQhtTgpkgzdr-UdbO6jj6910Rq5XGjjSYry-S742-eh3nUSbrYHWkbBpEd1yXupi0j87anKIWj4GrWb7LPd7daXx9W691MFgFBflYnp5fpAr1eCw1Sg8WDCXboPY7FZnjXeK8zxN4KsZAcll3npArwrT2-G57y5c9Vs6tgwKSE_sRbbfWhTS3h_0BZg6DLwQ2kLJfA"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">04 MINGGU INTENSIF</span>
+                    <div class="rating-badge">
+                      <svg aria-hidden="true" viewbox="0 0 20 20">
+                        <path
+                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
+                        </path>
+                      </svg>
+                      <span class="">4.9 (148 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">1-on-1 Career Mentoring: Fullstack Path</h3>
+                  <p class="service-card-desc">Sesi privat terstruktur merancang personal career roadmap, bedah
+                    arsitektur sistem, dan evaluasi rutin kemajuan coding Anda.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">KP</div>
+                    <div class="mentor-meta-info">
+                      <h4 class="">Kevin Perry</h4>
+                      <p class="">Lead Engineer @ Tech Unicorn</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 499.000</span>
+                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
+                      Batch</a>
+                  </div>
+                </div>
+              </article>
+              <!-- Card 2 -->
+              <article class="service-card" data-category="design" style="display: none;">
+                <div class=""
+                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
+                  <img alt="Portfolio and Resume Design Review Workspace" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1WvdgIa1MJ7svD_crv5JTojb8oWirz0pJcZlmtXKAQ-7n0KMvtW-PeuRkr3CDGzrv7z_SW3CUXcMwvLeVY5pNcWKEu4CezjcR1e1_VTkkCVnbcsQOCkZav0-bHFgCkkoQSMUtsBLGlq-jQ-Zeyxffkw35Lfy5R-BqFL6GDVK4SANh2Lifiumm5695F3JJrXu6HiMyHbJ-P_G6_O5s9qB55LL3iP7nCLBHuLxu8E1Y0qCR0rTR-fd0w6Yp0"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">02 MINGGU REVIEW</span>
+                    <div class="rating-badge">
+                      <svg aria-hidden="true" viewbox="0 0 20 20">
+                        <path
+                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
+                        </path>
+                      </svg>
+                      <span class="">5.0 (92 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">Portfolio &amp; Resume ATS Deep-Audit</h3>
+                  <p class="service-card-desc">Review baris-per-baris resume dan studi kasus portofolio desain Anda agar
+                    lolos pemindaian ATS dan memikat Hiring Manager.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">AA</div>
+                    <div class="mentor-meta-info">
+                      <h4 class="">Alvi Alexis</h4>
+                      <p class="">Senior Product Designer</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 299.000</span>
+                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
+                      Batch</a>
+                  </div>
+                </div>
+              </article>
+              <!-- Card 3 -->
+              <article class="service-card" data-category="engineering" style="display: flex;">
+                <div class=""
+                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
+                  <img alt="Mock Technical System Design Whiteboard Session" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1WRn3ffRweT_oqkOnddwj-8yIVWGbGo5bH5zf_F-L2VbcZMsErd5JsSLq_vG44nR8UuOnVqwO63Jwi2FpKDlocRCG7evZABZNIy4l8_X1bXC5uYgazxRu5mJta0DS9HX8LWcGLLPfeK59o3j-w-fDtv-h0lDbkBnW91mmRXMJHPK5X4Fu-3acumgoU-kQwW4zSvZo5mA5E-DcY7e9_3cKHjpMzcdG9n_n2xAkYDQkoFr-AYdjyokCGAVA"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">LIVE SIMULATION</span>
+                    <div class="rating-badge">
+                      <svg aria-hidden="true" viewbox="0 0 20 20">
+                        <path
+                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
+                        </path>
+                      </svg>
+                      <span class="">4.9 (115 ulasan)</span>
+                    </div>
+                  </div>
+                  <h3 class="service-card-title">Mock Technical &amp; System Design Interview</h3>
+                  <p class="service-card-desc">Simulasi live coding teknis 90 menit dan studi kasus arsitektur sistem
+                    dengan feedback tertulis mendalam setelah sesi selesai.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">CH</div>
+                    <div class="mentor-meta-info">
+                      <h4 class="">Chaplin</h4>
+                      <p class="">Principal Frontend Engineer</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <span class="price-tag">Rp 399.000</span>
+                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
+                      Batch</a>
+                  </div>
+                </div>
+              </article>
+              <article class="service-card" data-category="data">
+                <div
+                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
+                  <img alt="Data Science &amp; AI Engineering: Real-World ML Ops" class=""
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQc120vdu4RY_4O0FmyVN0P4GL7jVYFQwvGHAYH0RBVc3JigOzSPKjxQ6hv1mtT--1u5Ea-I5jt7bDg9oB55ZJKot3i1pDXz1GS_ZpC-cIkxysIZ-RsrTeQa7gZ_t8T7PB4N8AV6-SW-9GMROMV7zVrQq3i3TiTqaGyt06_D54xlIDuaGQSGJsqe5Aa_ZPUu33LrwCD8B6Snd0ONEkcergAn-Wf94-n_X0iJ8_SUscnHR4M0gS1gbv"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div>
+                  <div class="card-top-meta"><span class="duration-tag">06 MINGGU INTENSIF</span>
+                    <div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20">
+                        <path
+                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
+                        </path>
+                      </svg><span class="">4.9 (110 ulasan)</span></div>
+                  </div>
+                  <h3 class="service-card-title">Data Science &amp; AI Engineering: Real-World ML Ops</h3>
+                  <p class="service-card-desc">Bimbingan intensif end-to-end membangun pipeline machine learning,
+                    feature engineering, evaluasi model, dan deployment model ke skala produksi.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">DA</div>
+                    <div class="mentor-meta-info">
+                      <h4 class="">Farhan Rizky</h4>
+                      <p class="">Senior AI Engineer @ Global Tech</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 549.000</span><span
+                        class=""
+                        style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp
+                        1.100.000</span></div><a class="btn btn-primary" href="#register"
+                      style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                  </div>
+                </div>
+              </article>
+              <article class="service-card" data-category="product">
+                <div
+                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
+                  <img alt="Product Management Mastery &amp; Product Discovery" class=""
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGic29N__nDRwrRub-VClz6MHdcebEB3uE2gu6YxUJN4ANz66P-Dzqegg8rxLUJuMVVOCm6BE4KHwwu0KQ6tZZy2uheqU7f6yG3RZ_thvZ4PChvkgUKt7DUB4ZvahmWQqOEJiM-WkaGx2bKUx7SwPDJPObN3Te2u1EPBnw-mglJtf-suQnD0_AaQyA1gwhFhoLAOMuf80LneceTY0K6tmVBN-ImxT7i3jGYsvbTKKflFY91NplvE85"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div>
+                  <div class="card-top-meta"><span class="duration-tag">04 MINGGU STRATEGI</span>
+                    <div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20">
+                        <path
+                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
+                        </path>
+                      </svg><span class="">5.0 (88 ulasan)</span></div>
+                  </div>
+                  <h3 class="service-card-title">Product Management Mastery &amp; Product Discovery</h3>
+                  <p class="service-card-desc">Menguasai pembuatan PRD berstandar internasional, analisis metrik North
+                    Star, prioritisasi backlog dengan RICE framework, dan simulasi presentasi roadmap.</p>
+                </div>
+                <div>
+                  <div class="mentor-profile-strip">
+                    <div class="mentor-avatar">PM</div>
+                    <div class="mentor-meta-info">
+                      <h4 class="">Sarah Nabila</h4>
+                      <p class="">Principal Product Manager</p>
+                    </div>
+                  </div>
+                  <div class="card-footer-row">
+                    <div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 479.000</span><span
+                        class=""
+                        style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp
+                        950.000</span></div><a class="btn btn-primary" href="#register"
+                      style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- B. Founders Section (<section id="founders">) -->
+          <section aria-labelledby="foundersTitle" id="founders">
+            <span class="section-tag">DEWAN PENDIRI</span>
+            <h2 class="section-title" id="foundersTitle">Dipimpin oleh Tim Inovator Muda Berdedikasi</h2>
+            <p class="section-desc">Masing-masing pendiri membawa keahlian fungsional di bidang kepemimpinan produk,
+              arsitektur sistem, dan rekayasa antarmuka digital.</p>
+            <div class="founders-grid">
+              <!-- Founder 1 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
+                    alt="Rakha - Chief Executive Officer" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1X73oQ5gDmwqAudpts_7Ngy2PNmzl_2yrZooyb1hZznlqUM22ep2h7RjvYCgtFxdgJ50hT1auEDkw7dci5KXszeffPFE40gKskQSF8GGZx-Fim5i_a1tzdyJXNpOMsFbI1KgRMpXTJriTogxOgMTeaqfSP0HaG_Wwml9lIBnL7inoaK6HXFuuZb-vJ2qAWTMPHRsFAnmKIWpEXm5xLbNr-vBgUG11cNwQ8iJ9KeDb1LsPz9hoBf1J2SFA"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <h3 class="founder-name">Rakha</h3>
+                <span class="founder-role-badge">Chief Executive Officer</span>
+                <p class="founder-bio">Memimpin arah visi strategis produk MentorVerse, kemitraan ekosistem industri
+                  digital, dan pengawasan arsitektur semantik standar W3C.</p>
+                <div class="founder-social-links">
+                  <a aria-label="Profil LinkedIn Rakha" class="social-btn" href="#linkedin">LinkedIn</a>
+                  <a aria-label="Profil GitHub Rakha" class="social-btn" href="#github">GitHub</a>
+                </div>
+              </article>
+              <!-- Founder 2 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
+                    alt="Alvi - Chief Technology Officer" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1VhaHwg4jfPa5W_yBCl6SwaGdySvIs2zc8NNsFqytsBnzCw9ZUJdsew4SY6alzQEf3PMQuR4YyzUp4rfJ3KesgsCyKXeIOuwll3A0uloCoIMiDh5Ujb9EgDXhIXZ1NW4MPc7d18Sw447kLCrIx0da27ecrRZ5kh5R7kHYrItn1UE-r3i7yivO0efZv_CTKnBCo6fab34DcgcHgdyxU5DPzXz57wlbWDksN-WXFwSf5VuC2M6WadLgl5fhc"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <h3 class="founder-name">Alvi</h3>
+                <span class="founder-role-badge">Chief Technology Officer</span>
+                <p class="founder-bio">Merancang fondasi sistem tampilan CSS berbasis token desain, skalabilitas kode
+                  Flexbox &amp; Grid, dan performa aksesibilitas WCAG AAA.</p>
+                <div class="founder-social-links">
+                  <a aria-label="Profil LinkedIn Alvi" class="social-btn" href="#linkedin">LinkedIn</a>
+                  <a aria-label="Profil GitHub Alvi" class="social-btn" href="#github">GitHub</a>
+                </div>
+              </article>
+              <!-- Founder 3 -->
+              <article class="founder-card">
+                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
+                    alt="Chaplin - Lead UI/UX &amp; Frontend" class=""
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1W8FQqc7asx1OPeUXSA2V_OFMtwKXyDHmtGbexuV1B_0St2VPqRjXIoYEyLfxzBxKenSB8Yok_sw_PEyqha9int2A7ikvAmlBc6jBM4di3WuEck3xHQaLjrO6idGFvGF27sWQXeprGi0xDr5Cs9Ff-wZT-lEy-Ca9CgIdnmXrUxH5oVmEG7JfMTrke4I4mwt80vZiEOKu6gD-0J6u7lAb-T6Dj9zXdguwcHhWULxkBQfz1wbqSjdX_epJw"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <h3 class="founder-name">Chaplin</h3>
+                <span class="founder-role-badge">Lead UI/UX &amp; Frontend</span>
+                <p class="founder-bio">Bertanggung jawab atas responsivitas multi-perangkat via media queries,
+                  pengalaman interaktif pengguna, dan modularitas Vanilla JavaScript.</p>
+                <div class="founder-social-links">
+                  <a aria-label="Profil LinkedIn Chaplin" class="social-btn" href="#linkedin">LinkedIn</a>
+                  <a aria-label="Profil GitHub Chaplin" class="social-btn" href="#github">GitHub</a>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- C. Testimonials Section (<section id="testimonials">) -->
+          <section aria-labelledby="testimonialsTitle" id="testimonials">
+            <span class="section-tag">BUKTI KEBERHASILAN</span>
+            <h2 class="section-title" id="testimonialsTitle">Apa Kata Alumni Mentee Kami?</h2>
+            <p class="section-desc">Kisah nyata mereka yang berhasil meraih penawaran kerja pertama di industri
+              teknologi.</p>
+            <div class="testimonials-grid">
+              <figure class="testimonial-figure">
+                <blockquote class="testimonial-quote">
+                  "Bedah portofolio di MentorVerse benar-benar membuka mata saya. Dari 20 aplikasi yang saya kirim dan
+                  selalu ditolak, setelah perbaikan resume bersama Alvi, saya langsung dipanggil interview di 4 tech
+                  company!"
                 </blockquote>
-<figcaption class="testimonial-author">
-<div class="author-initial">DN</div>
-<div class="author-info">
-<h4 class="">Dimas Nugraha</h4>
-<p class="">Junior Frontend Dev @ FinTech Solution</p>
-</div>
-</figcaption>
-</figure>
-<figure class="testimonial-figure">
-<blockquote class="testimonial-quote">
-                  "Simulasi mock technical interview-nya sangat mirip dengan kondisi wawancara aslinya. Masukan dari mentor Kevin membuat saya jauh lebih tenang dan percaya diri saat live coding test."
+                <figcaption class="testimonial-author">
+                  <div class="author-initial">DN</div>
+                  <div class="author-info">
+                    <h4 class="">Dimas Nugraha</h4>
+                    <p class="">Junior Frontend Dev @ FinTech Solution</p>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure class="testimonial-figure">
+                <blockquote class="testimonial-quote">
+                  "Simulasi mock technical interview-nya sangat mirip dengan kondisi wawancara aslinya. Masukan dari
+                  mentor Kevin membuat saya jauh lebih tenang dan percaya diri saat live coding test."
                 </blockquote>
-<figcaption class="testimonial-author">
-<div class="author-initial">SP</div>
-<div class="author-info">
-<h4 class="">Siti Prameswari</h4>
-<p class="">Associate Software Engineer @ E-Commerce</p>
-</div>
-</figcaption>
-</figure>
-</div>
-</section>
-</div>
-<!-- =================== SIDEBAR (<aside>) (30%) =================== -->
-<aside aria-label="Informasi Sekunder dan Agenda" class="sidebar">
-<!-- Widget 1: Upcoming Webinar -->
-<article class="sidebar-widget">
-<div class="widget-header">
-<h3 class="widget-title">Agenda Webinar Mendatang</h3>
-</div>
-<span class="webinar-date-badge">14 OKTOBER 2026 • 19.30 WIB</span>
-<h4 class="webinar-topic">Kiat Lolos Wawancara Tech Startup 2026: Tembus Gaji Dua Digit</h4>
-<p class="webinar-speaker">Pembicara: Pratama Wijaya (Engineering Manager)</p>
-<a class="btn btn-accent" href="#webinar-rsvp" style="width: 100%;">RSVP Sekarang (Gratis)</a>
-</article>
-<!-- Widget 2: Quick Career Tips -->
-<article class="sidebar-widget">
-<div class="widget-header">
-<h3 class="widget-title">Tips Karier Kilat (ATS)</h3>
-</div>
-<ul class="tips-list">
-<li class="tip-item">Gunakan format tanggal standar YYYY-MM agar mesin pemindai ATS tidak mengalami eror *parsing*.</li>
-<li class="tip-item">Tuliskan pencapaian berbasis metrik riil (misal: "Meningkatkan performa web sebesar 34%").</li>
-<li class="tip-item">Sertakan tautan proyek live demo yang dapat langsung diakses publik pada file resume.</li>
-</ul>
-</article>
-<!-- Widget 3: Fast Newsletter Form -->
-<article class="sidebar-widget">
-<div class="widget-header">
-<h3 class="widget-title">Notifikasi Batch Baru</h3>
-</div>
-<p class="" style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--space-md);">Dapatkan informasi awal saat kuota mentoring dibuka kembali.</p>
-<form class="newsletter-form" id="sidebarNewsletterForm" novalidate="">
-<div class="form-group">
-<input aria-label="Alamat email untuk newsletter" id="subscriberEmail" placeholder="Masukkan alamat email aktif" required="" type="email"/>
-</div>
-<button class="btn btn-primary" style="width: 100%;" type="submit">Daftarkan Email Saya</button>
-<p aria-live="polite" class="form-feedback" id="formFeedbackMsg"></p>
-</form>
-</article>
-</aside>
-</div>
-</section>
-</main>
-<!-- ========================================================================
+                <figcaption class="testimonial-author">
+                  <div class="author-initial">SP</div>
+                  <div class="author-info">
+                    <h4 class="">Siti Prameswari</h4>
+                    <p class="">Associate Software Engineer @ E-Commerce</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+        <!-- =================== SIDEBAR (<aside>) (30%) =================== -->
+        <aside aria-label="Informasi Sekunder dan Agenda" class="sidebar">
+          <!-- Widget 1: Upcoming Webinar -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Agenda Webinar Mendatang</h3>
+            </div>
+            <span class="webinar-date-badge">14 OKTOBER 2026 • 19.30 WIB</span>
+            <h4 class="webinar-topic">Kiat Lolos Wawancara Tech Startup 2026: Tembus Gaji Dua Digit</h4>
+            <p class="webinar-speaker">Pembicara: Pratama Wijaya (Engineering Manager)</p>
+            <a class="btn btn-accent" href="#webinar-rsvp" style="width: 100%;">RSVP Sekarang (Gratis)</a>
+          </article>
+          <!-- Widget 2: Quick Career Tips -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Tips Karier Kilat (ATS)</h3>
+            </div>
+            <ul class="tips-list">
+              <li class="tip-item">Gunakan format tanggal standar YYYY-MM agar mesin pemindai ATS tidak mengalami eror
+                *parsing*.</li>
+              <li class="tip-item">Tuliskan pencapaian berbasis metrik riil (misal: "Meningkatkan performa web sebesar
+                34%").</li>
+              <li class="tip-item">Sertakan tautan proyek live demo yang dapat langsung diakses publik pada file resume.
+              </li>
+            </ul>
+          </article>
+          <!-- Widget 3: Fast Newsletter Form -->
+          <article class="sidebar-widget">
+            <div class="widget-header">
+              <h3 class="widget-title">Notifikasi Batch Baru</h3>
+            </div>
+            <p class="" style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--space-md);">
+              Dapatkan informasi awal saat kuota mentoring dibuka kembali.</p>
+            <form class="newsletter-form" id="sidebarNewsletterForm" novalidate="">
+              <div class="form-group">
+                <input aria-label="Alamat email untuk newsletter" id="subscriberEmail"
+                  placeholder="Masukkan alamat email aktif" required="" type="email" />
+              </div>
+              <button class="btn btn-primary" style="width: 100%;" type="submit">Daftarkan Email Saya</button>
+              <p aria-live="polite" class="form-feedback" id="formFeedbackMsg"></p>
+            </form>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <!-- ========================================================================
        FOOTER (<footer>)
        ======================================================================== -->
-<footer class="main-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col-brand">
-<a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero">
-<svg aria-hidden="true" style="fill: #008B99;" viewbox="0 0 24 24"><path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
-<span class="">MentorVerse</span>
-</a>
-<p class="">
-            Platform akselerasi karier teknologi nomor satu yang berkomitmen mendemokratisasi akses bimbingan industri berkualitas bagi mahasiswa dan lulusan baru Indonesia.
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero">
+            <svg aria-hidden="true" style="fill: #008B99;" viewbox="0 0 24 24">
+              <path
+                d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z">
+              </path>
+            </svg>
+            <span class="">MentorVerse</span>
+          </a>
+          <p class="">
+            Platform akselerasi karier teknologi nomor satu yang berkomitmen mendemokratisasi akses bimbingan industri
+            berkualitas bagi mahasiswa dan lulusan baru Indonesia.
           </p>
-</div>
-<div>
-<h4 class="footer-title">Tautan Cepat</h4>
-<ul class="footer-links">
-<li class=""><a class="footer-link" href="#hero">Beranda Utama</a></li>
-<li class=""><a class="footer-link" href="#services">Katalog Program</a></li>
-<li class=""><a class="footer-link" href="#about">Tentang Startup</a></li>
-<li class=""><a class="footer-link" href="#founders">Profil Pengembang</a></li>
-</ul>
-</div>
-<div>
-<h4 class="footer-title">Track Program</h4>
-<ul class="footer-links">
-<li class=""><a class="footer-link" href="#services">Software Engineering</a></li>
-<li class=""><a class="footer-link" href="#services">UI/UX Design</a></li>
-<li class=""><a class="footer-link" href="#services">Data &amp; Artificial Intelligence</a></li>
-<li class=""><a class="footer-link" href="#services">Product Management</a></li>
-</ul>
-</div>
-<div>
-<h4 class="footer-title">Kantor Operasional</h4>
-<p class="" style="font-size: 0.875rem; margin-bottom: 8px;">Kawasan Inovasi Digital MentorVerse, Jakarta Selatan, DKI Jakarta 12430</p>
-<p class="" style="font-size: 0.875rem;">Email: info@mentorverse.id</p>
-</div>
-</div>
-<div class="footer-bottom-row">
-<p class="">© 2026 MentorVerse Technologies. Hak cipta dilindungi undang-undang.</p>
-<div class="footer-social-icons">
-<a aria-label="GitHub MentorVerse" class="" href="#github">GitHub</a>
-<a aria-label="LinkedIn MentorVerse" class="" href="#linkedin">LinkedIn</a>
-<a aria-label="Instagram MentorVerse" class="" href="#instagram">Instagram</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- ========================================================================
+        </div>
+        <div>
+          <h4 class="footer-title">Tautan Cepat</h4>
+          <ul class="footer-links">
+            <li class=""><a class="footer-link" href="#hero">Beranda Utama</a></li>
+            <li class=""><a class="footer-link" href="#services">Katalog Program</a></li>
+            <li class=""><a class="footer-link" href="#about">Tentang Startup</a></li>
+            <li class=""><a class="footer-link" href="#founders">Profil Pengembang</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Track Program</h4>
+          <ul class="footer-links">
+            <li class=""><a class="footer-link" href="#services">Software Engineering</a></li>
+            <li class=""><a class="footer-link" href="#services">UI/UX Design</a></li>
+            <li class=""><a class="footer-link" href="#services">Data &amp; Artificial Intelligence</a></li>
+            <li class=""><a class="footer-link" href="#services">Product Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Kantor Operasional</h4>
+          <p class="" style="font-size: 0.875rem; margin-bottom: 8px;">Kawasan Inovasi Digital MentorVerse, Jakarta
+            Selatan, DKI Jakarta 12430</p>
+          <p class="" style="font-size: 0.875rem;">Email: info@mentorverse.id</p>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p class="">© 2026 MentorVerse Technologies. Hak cipta dilindungi undang-undang.</p>
+        <div class="footer-social-icons">
+          <a aria-label="GitHub MentorVerse" class="" href="#github">GitHub</a>
+          <a aria-label="LinkedIn MentorVerse" class="" href="#linkedin">LinkedIn</a>
+          <a aria-label="Instagram MentorVerse" class="" href="#instagram">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========================================================================
        FLOATING BACK TO TOP BUTTON
        ======================================================================== -->
-<button aria-label="Kembali ke Atas" class="back-to-top-btn" id="backToTopBtn" type="button">
-<span class="tooltip-text">Kembali ke Atas</span>
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
-</svg>
-</button>
-<!-- ========================================================================
+  <button aria-label="Kembali ke Atas" class="back-to-top-btn" id="backToTopBtn" type="button">
+    <span class="tooltip-text">Kembali ke Atas</span>
+    <svg aria-hidden="true" viewbox="0 0 24 24">
+      <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
+    </svg>
+  </button>
+  <!-- ========================================================================
        MODULAR VANILLA JAVASCRIPT (ES6)
        ======================================================================== -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Mobile Hamburger Menu Toggle
-      const menuBtn = document.getElementById('menuToggleBtn');
-      const navDrawer = document.getElementById('mainNavDrawer');
+  <!-- <script src="js/script.js"></script> -->
+</body>
 
-      if (menuBtn && navDrawer) {
-        menuBtn.addEventListener('click', () => {
-          const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-          menuBtn.setAttribute('aria-expanded', String(!isExpanded));
-          navDrawer.classList.toggle('is-active');
-        });
-
-        // Close drawer when clicking a navigation link
-        navDrawer.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            menuBtn.setAttribute('aria-expanded', 'false');
-            navDrawer.classList.remove('is-active');
-          });
-        });
-      }
-
-      // 2. Category Tab Filter Interactivity
-      const filterPills = document.querySelectorAll('.filter-pill');
-      const serviceCards = document.querySelectorAll('.service-card');
-
-      filterPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          filterPills.forEach(p => {
-            p.classList.remove('active');
-            p.setAttribute('aria-selected', 'false');
-          });
-          pill.classList.add('active');
-          pill.setAttribute('aria-selected', 'true');
-
-          const selectedCategory = pill.dataset.filter;
-
-          serviceCards.forEach(card => {
-            const cardCat = card.dataset.category;
-            if (selectedCategory === 'all' || cardCat === selectedCategory) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-
-      // 3. Fast Newsletter Form Validation (Constraint Validation API)
-      const newsletterForm = document.getElementById('sidebarNewsletterForm');
-      const emailInput = document.getElementById('subscriberEmail');
-      const feedbackMsg = document.getElementById('formFeedbackMsg');
-
-      if (newsletterForm && emailInput && feedbackMsg) {
-        newsletterForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-
-          if (!emailInput.checkValidity()) {
-            feedbackMsg.textContent = 'Silakan masukkan alamat email yang valid.';
-            feedbackMsg.className = 'form-feedback error';
-            emailInput.focus();
-          } else {
-            feedbackMsg.textContent = 'Berhasil! Anda akan menerima update batch berikutnya.';
-            feedbackMsg.className = 'form-feedback success';
-            newsletterForm.reset();
-            setTimeout(() => {
-              feedbackMsg.textContent = '';
-            }, 5000);
-          }
-        });
-      }
-
-      // 4. Smooth Sliding Active Indicator on Navbar
-      const navList = document.getElementById('navMenuList');
-      const navIndicator = document.getElementById('navSliderIndicator');
-      const navLinks = document.querySelectorAll('#navMenuList .nav-link');
-
-      function updateNavIndicator(activeLink) {
-        if (!activeLink || !navIndicator || !navList) return;
-        const listRect = navList.getBoundingClientRect();
-        const linkRect = activeLink.getBoundingClientRect();
-
-        // Calculate left position relative to parent list
-        const leftOffset = linkRect.left - listRect.left;
-        const width = linkRect.width;
-
-        navIndicator.style.transform = `translateX(${leftOffset}px)`;
-        navIndicator.style.width = `${width}px`;
-        navIndicator.style.opacity = '1';
-      }
-
-      function setActiveNavLink(targetId) {
-        let activeEl = null;
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === `#${targetId}`) {
-            link.classList.add('active');
-            activeEl = link;
-          } else {
-            link.classList.remove('active');
-          }
-        });
-
-        if (activeEl) {
-          updateNavIndicator(activeEl);
-        }
-      }
-
-      // Initialize indicator position
-      const initialActive = document.querySelector('#navMenuList .nav-link.active') || navLinks[0];
-      if (initialActive) {
-        setTimeout(() => updateNavIndicator(initialActive), 100);
-      }
-
-      window.addEventListener('resize', () => {
-        const currentActive = document.querySelector('#navMenuList .nav-link.active');
-        if (currentActive) updateNavIndicator(currentActive);
-      });
-
-      // Handle direct link clicks
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const targetId = link.getAttribute('href').replace('#', '');
-          setActiveNavLink(targetId);
-        });
-      });
-
-      // 5. ScrollSpy using IntersectionObserver
-      const sections = ['hero', 'about', 'services', 'founders', 'testimonials'];
-      const sectionElements = sections.map(id => document.getElementById(id)).filter(Boolean);
-
-      const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            setActiveNavLink(sectionId);
-          }
-        });
-      }, observerOptions);
-
-      sectionElements.forEach(sec => observer.observe(sec));
-
-      // 6. Floating Back to Top Button
-      const backToTopBtn = document.getElementById('backToTopBtn');
-
-      if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 300) {
-            backToTopBtn.classList.add('is-visible');
-          } else {
-            backToTopBtn.classList.remove('is-visible');
-          }
-        }, { passive: true });
-
-        backToTopBtn.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-      }
-    });
-  </script>
-</body></html>
+</html>
