@@ -2,7 +2,7 @@
    MOBILE-FIRST MEDIA QUERIES & RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
-/* Tablet (max-width: 1024px) */
+/* Tablet & Mobile (max-width: 1024px) */
 @media (max-width: 1024px) {
   .main-sidebar-grid {
     grid-template-columns: 1fr;
@@ -13,10 +13,8 @@
   .founders-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
+  /* Navigasi Laci (Drawer) Aktif di Tablet */
   .nav-drawer {
     display: none;
   }
@@ -29,7 +27,7 @@
     top: 72px;
     left: 0;
     right: 0;
-    background-color: #FFFFFF;
+    background-color: var(--surface, #FFFFFF);
     padding: 24px;
     box-shadow: var(--shadow-lg);
     border-bottom: 1px solid var(--border-color);
@@ -43,6 +41,19 @@
   }
 
   .nav-slider-indicator {
+    display: none;
+  }
+  
+  .drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .nav-actions .btn {
     display: none;
   }
 
@@ -63,14 +74,17 @@
     border-radius: var(--radius-pill);
     transition: var(--transition);
   }
+}
 
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2rem; 
   }
 
   .about-grid {
@@ -82,8 +96,12 @@
     grid-template-columns: 1fr;
   }
 
+  /* Ubah Grid Card menjadi 1 Kolom Penuh */
+  .services-grid, 
   .founders-grid {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
   }
 
   .testimonials-grid {
@@ -105,6 +123,100 @@
     right: 20px;
     width: 44px;
     height: 44px;
+  }
+
+  .filter-tabs-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    width: 100%;
+  }
+}
+
+/* Super Small Mobile (max-width: 480px / 320px screen guard) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem; 
+  }
+
+  .hero-metric-row {
+    grid-template-columns: 1fr; 
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .hero-visual-card {
+    padding: 24px 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  /* --- Perbaikan Tata Letak Internal Card Untuk 320px --- */
+  .service-card {
+    padding: 16px;
+  }
+  
+  .founder-card {
+    padding: 16px;
+  }
+
+  /* Menumpuk label durasi & rating agar tidak sesak */
+  .card-top-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Menumpuk harga & tombol daftar */
+  .card-footer-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .price-tag {
+    align-self: flex-start;
+  }
+  
+  .price-block {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Membolehkan teks membungkus (wrap) bila kepanjangan */
+  .mentor-profile-strip {
+    flex-wrap: wrap; 
+  }
+
+  .testimonial-figure {
+    padding: 16px;
+  }
+
+  .founder-social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-mission-item {
+    gap: 12px;
   }
 }
 

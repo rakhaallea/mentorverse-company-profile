@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-
-<html class="" lang="id" style="">
-
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta
-    content="MentorVerse - Platform Akselerasi Karier Digital melalui 1-on-1 Mentorship, Bedah Portofolio ATS, dan Mock Technical Interview bersama praktisi industri teknologi."
-    name="description" />
+  <meta content="MentorVerse - Platform Akselerasi Karier Digital melalui 1-on-1 Mentorship, Bedah Portofolio ATS, dan Mock Technical Interview bersama praktisi industri teknologi." name="description" />
   <title>MentorVerse | Akselerasi Karier Digital Bersama Mentor Industri</title>
-  <!-- Google Fonts: Inter -->
+  
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-  <!-- ========================================================================
-      TOP UTILITY BAR (<header>)
-      ======================================================================== -->
-  <!-- ========================================================================
-      MAIN NAVIGATION BAR (<nav>)
-      ======================================================================== -->
+  <!-- NAVIGASI UTAMA -->
   <nav aria-label="Navigasi Utama Situs" class="main-nav-bar">
-    <div class="container nav-container"><a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero"
-        style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <div class=""
-          style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, rgb(0, 139, 153) 0%, rgb(0, 118, 130) 100%); display: flex; align-items: center; justify-content: center; box-shadow: rgba(0, 139, 153, 0.35) 0px 4px 10px; flex-shrink: 0;">
-          <svg style="width: 20px; height: 20px; fill: #ffffff;" viewbox="0 0 24 24">
-            <path
-              d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z">
-            </path>
-          </svg></div><span class=""
-          style="font-size: 1.25rem; font-weight: 800; color: rgb(11, 28, 48); letter-spacing: -0.02em;">Mentor<span
-            class="" style="color: rgb(0, 139, 153);">Verse</span></span>
+    <div class="container nav-container">
+      <a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero">
+        <div class="brand-icon-box">
+          <svg viewbox="0 0 24 24">
+            <path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"></path>
+          </svg>
+        </div>
+        <span>Mentor<span class="brand-highlight">Verse</span></span>
       </a>
+      
       <div class="nav-drawer" id="mainNavDrawer">
         <ul class="nav-list" id="navMenuList">
-          <!-- Animated sliding underline indicator -->
           <div aria-hidden="true" class="nav-slider-indicator" id="navSliderIndicator"></div>
           <li><a class="nav-link active" href="#hero">Beranda</a></li>
           <li><a class="nav-link" href="#about">Tentang Kami</a></li>
@@ -49,15 +35,21 @@
           <li><a class="nav-link" href="#founders">Mentor &amp; Tim</a></li>
           <li><a class="nav-link" href="#testimonials">Testimoni</a></li>
         </ul>
+        
+        <!-- CTA Khusus Mobile/Tablet di dalam Menu Laci -->
+        <div class="drawer-actions">
+          <a class="btn btn-primary btn-full" href="#services">Jadwalkan Mentoring</a>
+          <a class="btn btn-outline btn-full" href="#login">Masuk</a>
+        </div>
       </div>
+      
       <div class="nav-actions">
-        <a class="btn" href="#services"
-          style="background-color: rgb(0, 139, 153); color: rgb(255, 255, 255); padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.875rem; box-shadow: rgba(0, 139, 153, 0.3) 0px 4px 12px; text-decoration: none;">Jadwalkan
-          Mentoring</a>
-        <a class="btn" href="#login"
-          style="background-color: rgb(255, 255, 255); color: rgb(30, 41, 59); border: 1px solid rgb(226, 232, 240); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;">Masuk</a>
-        <button aria-controls="mainNavDrawer" aria-expanded="false" aria-label="Buka Menu Navigasi"
-          class="mobile-menu-toggle" id="menuToggleBtn">
+        <!-- CTA Khusus Desktop (Dibersihkan dari style="" bawaan) -->
+        <a class="btn btn-primary nav-btn-cta" href="#services">Jadwalkan Mentoring</a>
+        <a class="btn btn-outline nav-btn-cta" href="#login">Masuk</a>
+        
+        <!-- Tombol Hamburger -->
+        <button aria-controls="mainNavDrawer" aria-expanded="false" aria-label="Buka Menu Navigasi" class="mobile-menu-toggle" id="menuToggleBtn">
           <span></span>
           <span></span>
           <span></span>
@@ -65,48 +57,39 @@
       </div>
     </div>
   </nav>
-  <!-- ========================================================================
-      MAIN CONTENT CONTAINER (<main>)
-      ======================================================================== -->
+
+  <!-- KONTEN UTAMA -->
   <main>
-    <!-- 1. HERO SECTION (<section id="hero">) -->
+    <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge-pill">
             <span class="hero-badge-dot"></span>
-            <span class="">AKSELERASI KARIER DIGITAL 2026</span>
+            <span>AKSELERASI KARIER DIGITAL 2026</span>
           </div>
-          <h1 class="hero-title">Akselerasi Karier Digitalmu Bersama <span class="">Mentor Top Dunia Industri</span>
-          </h1>
+          <h1 class="hero-title">Akselerasi Karier Digitalmu Bersama <span>Mentor Top Dunia Industri</span></h1>
           <p class="hero-description">
-            Jembatani kesenjangan kurikulum akademik dengan bimbingan 1-on-1 privat, bedah portofolio standar ATS, dan
-            simulasi technical interview langsung dari praktisi teknologi terkemuka.
+            Jembatani kesenjangan kurikulum akademik dengan bimbingan 1-on-1 privat, bedah portofolio standar ATS, dan simulasi technical interview langsung dari praktisi teknologi terkemuka.
           </p>
           <ul class="hero-checklist">
             <li class="checklist-item">
               <svg aria-hidden="true" viewbox="0 0 20 20">
-                <path
-                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
-                </path>
+                <path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path>
               </svg>
-              <span class="">Bimbingan 1-on-1 Bersama Senior Engineer &amp; Designer</span>
+              <span>Bimbingan 1-on-1 Bersama Senior Engineer &amp; Designer</span>
             </li>
             <li class="checklist-item">
               <svg aria-hidden="true" viewbox="0 0 20 20">
-                <path
-                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
-                </path>
+                <path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path>
               </svg>
-              <span class="">Kurasi Portofolio Berstandar Industri Startup &amp; Big Tech</span>
+              <span>Kurasi Portofolio Berstandar Industri Startup &amp; Big Tech</span>
             </li>
             <li class="checklist-item">
               <svg aria-hidden="true" viewbox="0 0 20 20">
-                <path
-                  d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z">
-                </path>
+                <path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 7.7l-5 5a1 1 0 01-1.4 0l-2.3-2.3a1 1 0 111.4-1.4L8.6 10.6l4.3-4.3a1 1 0 011.4 1.4z"></path>
               </svg>
-              <span class="">Simulasi Wawancara Kerja &amp; Negosiasi Penawaran Gaji</span>
+              <span>Simulasi Wawancara Kerja &amp; Negosiasi Penawaran Gaji</span>
             </li>
           </ul>
           <div class="hero-cta-group">
@@ -114,6 +97,7 @@
             <a class="btn btn-secondary" href="#about">Pelajari Program</a>
           </div>
         </div>
+        
         <div class="hero-visual">
           <div class="hero-visual-card">
             <span class="hero-card-tag">BATCH Q1 2026 TELAH DIBUKA</span>
@@ -130,114 +114,88 @@
             </div>
             <div class="floating-pill">
               <span class="floating-pill-dot blue"></span>
-              <span class="">16,500+ Mentee Terbimbing</span>
+              <span>16,500+ Mentee Terbimbing</span>
             </div>
             <div class="floating-pill">
               <span class="floating-pill-dot coral"></span>
-              <span class="">150+ Top Tech Mentors Aktif</span>
+              <span>150+ Top Tech Mentors Aktif</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- 2. TRUST PROPOSITION STRIP (<section class="trust-strip">) -->
+
+    <!-- STRIP KEUNGGULAN -->
     <section aria-label="Keunggulan Utama Platform" class="trust-strip">
       <div class="container trust-grid">
         <div class="trust-item">
           <div class="trust-icon-box">
-            <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path
-                d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z">
-              </path>
-            </svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
           </div>
-          <span class="">1-on-1 Career Mentoring</span>
+          <span>1-on-1 Career Mentoring</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon-box">
-            <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path
-                d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.7 0-1.1.1 1.3.9 2.1 2.1 2.1 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z">
-              </path>
-            </svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.7 0-1.1.1 1.3.9 2.1 2.1 2.1 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"></path></svg>
           </div>
-          <span class="">Akses Komunitas Seumur Hidup</span>
+          <span>Akses Komunitas Seumur Hidup</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon-box">
-            <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path
-                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z">
-              </path>
-            </svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
           </div>
-          <span class="">Kurasi Portofolio Industri</span>
+          <span>Kurasi Portofolio Industri</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon-box">
-            <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path
-                d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4z">
-              </path>
-            </svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4z"></path></svg>
           </div>
-          <span class="">Dukungan Mock Interview</span>
+          <span>Dukungan Mock Interview</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon-box">
-            <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path
-                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17.9V18h-2v1.9c-4-.5-7.4-3.9-7.9-7.9H5v-2H3.1c.5-4 3.9-7.4 7.9-7.9V5h2V3.1c4 .5 7.4 3.9 7.9 7.9H19v2h1.9c-.5 4-3.9 7.4-7.9 7.9z">
-              </path>
-            </svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17.9V18h-2v1.9c-4-.5-7.4-3.9-7.9-7.9H5v-2H3.1c.5-4 3.9-7.4 7.9-7.9V5h2V3.1c4 .5 7.4 3.9 7.9 7.9H19v2h1.9c-.5 4-3.9 7.4-7.9 7.9z"></path></svg>
           </div>
-          <span class="">Jaringan Kerja Mitra Startup</span>
+          <span>Jaringan Kerja Mitra Startup</span>
         </div>
       </div>
     </section>
-    <!-- 3. ABOUT SECTION (<section id="about">) -->
+
+    <!-- ABOUT SECTION -->
     <section class="about-section" id="about">
       <div class="container about-grid">
         <div class="about-collage">
           <div class="collage-badge">24+ Mitra Tech Startup</div>
-          <div class="collage-card"
-            style="padding: 0px; overflow: hidden; border-radius: 16px; box-shadow: rgba(0, 139, 153, 0.12) 0px 16px 36px; border: 1px solid rgb(226, 232, 240);">
-            <img alt="Diskusi dan kolaborasi tim teknologi di MentorVerse" class="collage-img"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62yMz6_iHUEjZb0lwALKfkH6EJH1w6-INl-vblcrQRi6jjL-DF5fwmRAuJdpi4jNpoOH7XdnamKRIQLOEMprgGXqR4MZcmRWHbDHDPIHPt0Ak8DTU4bOXAMhyyA_dkoNghlDBvKC8Il78JiKKHYBCIjST122CzYQEN90q1XelrMf7AAUdjj-B98gIS3od2davU1JkAB8vSwYHNJuP2tdkpPrzP8YY2zXNTZVmkFfdOMpMf1HpWt5L"
-              style="width: 100%; height: 100%; min-height: 280px; max-height: 380px; object-fit: cover; display: block; border-radius: 16px;" />
+          <div class="collage-card-preview">
+            <img alt="Diskusi dan kolaborasi tim teknologi di MentorVerse" class="collage-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62yMz6_iHUEjZb0lwALKfkH6EJH1w6-INl-vblcrQRi6jjL-DF5fwmRAuJdpi4jNpoOH7XdnamKRIQLOEMprgGXqR4MZcmRWHbDHDPIHPt0Ak8DTU4bOXAMhyyA_dkoNghlDBvKC8Il78JiKKHYBCIjST122CzYQEN90q1XelrMf7AAUdjj-B98gIS3od2davU1JkAB8vSwYHNJuP2tdkpPrzP8YY2zXNTZVmkFfdOMpMf1HpWt5L" />
           </div>
         </div>
         <div class="about-text-column">
           <span class="section-tag">TENTANG MENTORVERSE</span>
           <h2 class="section-title">Jembatani Kesenjangan Akademik dengan Kebutuhan Riil Industri Teknologi</h2>
           <p class="section-desc">
-            Banyak lulusan perguruan tinggi memiliki nilai akademik gemilang, namun gagap saat menghadapi tantangan
-            wawancara teknis dan standar pengerjaan kode profesional. MentorVerse didirikan untuk memangkas *gap*
-            tersebut secara terukur.
+            Banyak lulusan perguruan tinggi memiliki nilai akademik gemilang, namun gagap saat menghadapi tantangan wawancara teknis dan standar pengerjaan kode profesional. MentorVerse didirikan untuk memangkas gap tersebut secara terukur.
           </p>
           <div class="about-mission-list">
             <div class="about-mission-item">
               <div class="mission-bullet-num">1</div>
               <div class="mission-text">
-                <h3 class="">Bimbingan Terarah dari Praktisi Terpilih</h3>
-                <p class="">Belajar langsung dari Tech Lead, Product Manager, dan Principal Designer yang aktif
-                  membangun produk skala jutaan pengguna.</p>
+                <h3>Bimbingan Terarah dari Praktisi Terpilih</h3>
+                <p>Belajar langsung dari Tech Lead, Product Manager, dan Principal Designer yang aktif membangun produk skala jutaan pengguna.</p>
               </div>
             </div>
             <div class="about-mission-item">
               <div class="mission-bullet-num">2</div>
               <div class="mission-text">
-                <h3 class="">Kurasi Resume &amp; Portofolio Lolos ATS</h3>
-                <p class="">Studi kasus nyata pada portofolio Anda dibedah menyeluruh agar menarik perhatian recruiter
-                  tech company dalam 6 detik pertama.</p>
+                <h3>Kurasi Resume &amp; Portofolio Lolos ATS</h3>
+                <p>Studi kasus nyata pada portofolio Anda dibedah menyeluruh agar menarik perhatian recruiter tech company dalam 6 detik pertama.</p>
               </div>
             </div>
             <div class="about-mission-item">
               <div class="mission-bullet-num">3</div>
               <div class="mission-text">
-                <h3 class="">Jalur Rekomendasi Kerja Khusus</h3>
-                <p class="">Mentee berkinerja tinggi langsung direkomendasikan ke ekosistem jaringan perusahaan mitra
-                  startup teknologi kami.</p>
+                <h3>Jalur Rekomendasi Kerja Khusus</h3>
+                <p>Mentee berkinerja tinggi langsung direkomendasikan ke ekosistem jaringan perusahaan mitra startup teknologi kami.</p>
               </div>
             </div>
           </div>
@@ -245,228 +203,200 @@
         </div>
       </div>
     </section>
-    <!-- 4. MAIN CONTENT & SIDEBAR CONTAINER (70% Content vs 30% Sidebar) -->
+
+    <!-- MAIN CONTENT & SIDEBAR CONTAINER -->
     <section class="layout-wrapper-section">
       <div class="container main-sidebar-grid">
-        <!-- =================== KONTEN UTAMA (70%) =================== -->
         <div class="content-primary">
-          <!-- A. Services Catalog Section -->
+          
+          <!-- Services Catalog -->
           <section aria-labelledby="servicesTitle" id="services">
             <span class="section-tag">PROGRAM UNGGULAN</span>
             <h2 class="section-title" id="servicesTitle">Katalog Program Akselerasi Karier</h2>
-            <p class="section-desc">Pilih paket bimbingan intensif yang disesuaikan dengan kebutuhan akselerasi karier
-              teknologi Anda saat ini.</p>
-            <!-- Filter Pills -->
+            <p class="section-desc">Pilih paket bimbingan intensif yang disesuaikan dengan kebutuhan akselerasi karier teknologi Anda saat ini.</p>
+            
             <div aria-label="Filter Kategori Program" class="filter-tabs-nav" role="tablist">
               <button aria-selected="false" class="filter-pill" data-filter="all" role="tab">Semua Program</button>
-              <button aria-selected="true" class="filter-pill active" data-filter="engineering" role="tab">Software
-                Engineering</button>
+              <button aria-selected="true" class="filter-pill active" data-filter="engineering" role="tab">Software Engineering</button>
               <button aria-selected="false" class="filter-pill" data-filter="design" role="tab">UI/UX Design</button>
               <button aria-selected="false" class="filter-pill" data-filter="data" role="tab">Data &amp; AI</button>
-              <button aria-selected="false" class="filter-pill" data-filter="product" role="tab">Product
-                Management</button>
+              <button aria-selected="false" class="filter-pill" data-filter="product" role="tab">Product Management</button>
             </div>
-            <!-- Program Cards Grid -->
+            
             <div class="services-grid">
               <!-- Card 1 -->
               <article class="service-card" data-category="engineering" style="display: flex;">
-                <div class=""
-                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
-                  <img alt="1-on-1 Career Mentoring Fullstack Coding Setup" class=""
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1V0rKN3gtxMxRAYh3zMajcaQKMVL-FBzBirIREtNlbCdxOZm5FkJQhtTgpkgzdr-UdbO6jj6910Rq5XGjjSYry-S742-eh3nUSbrYHWkbBpEd1yXupi0j87anKIWj4GrWb7LPd7daXx9W691MFgFBflYnp5fpAr1eCw1Sg8WDCXboPY7FZnjXeK8zxN4KsZAcll3npArwrT2-G57y5c9Vs6tgwKSE_sRbbfWhTS3h_0BZg6DLwQ2kLJfA"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div class="card-thumb">
+                  <img alt="1-on-1 Career Mentoring Fullstack Coding Setup" src="https://lh3.googleusercontent.com/aida/AEtjO1V0rKN3gtxMxRAYh3zMajcaQKMVL-FBzBirIREtNlbCdxOZm5FkJQhtTgpkgzdr-UdbO6jj6910Rq5XGjjSYry-S742-eh3nUSbrYHWkbBpEd1yXupi0j87anKIWj4GrWb7LPd7daXx9W691MFgFBflYnp5fpAr1eCw1Sg8WDCXboPY7FZnjXeK8zxN4KsZAcll3npArwrT2-G57y5c9Vs6tgwKSE_sRbbfWhTS3h_0BZg6DLwQ2kLJfA" />
+                </div>
                 <div>
                   <div class="card-top-meta">
                     <span class="duration-tag">04 MINGGU INTENSIF</span>
                     <div class="rating-badge">
-                      <svg aria-hidden="true" viewbox="0 0 20 20">
-                        <path
-                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
-                        </path>
-                      </svg>
-                      <span class="">4.9 (148 ulasan)</span>
+                      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
+                      <span>4.9 (148)</span>
                     </div>
                   </div>
                   <h3 class="service-card-title">1-on-1 Career Mentoring: Fullstack Path</h3>
-                  <p class="service-card-desc">Sesi privat terstruktur merancang personal career roadmap, bedah
-                    arsitektur sistem, dan evaluasi rutin kemajuan coding Anda.</p>
+                  <p class="service-card-desc">Sesi privat terstruktur merancang personal career roadmap, bedah arsitektur sistem, dan evaluasi rutin kemajuan coding Anda.</p>
                 </div>
                 <div>
                   <div class="mentor-profile-strip">
                     <div class="mentor-avatar">KP</div>
                     <div class="mentor-meta-info">
-                      <h4 class="">Kevin Perry</h4>
-                      <p class="">Lead Engineer @ Tech Unicorn</p>
+                      <h4>Kevin Perry</h4>
+                      <p>Lead Engineer @ Tech Unicorn</p>
                     </div>
                   </div>
                   <div class="card-footer-row">
                     <span class="price-tag">Rp 499.000</span>
-                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
-                      Batch</a>
+                    <a class="btn btn-primary btn-sm" href="#register">Daftar Batch</a>
                   </div>
                 </div>
               </article>
+              
               <!-- Card 2 -->
               <article class="service-card" data-category="design" style="display: none;">
-                <div class=""
-                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
-                  <img alt="Portfolio and Resume Design Review Workspace" class=""
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1WvdgIa1MJ7svD_crv5JTojb8oWirz0pJcZlmtXKAQ-7n0KMvtW-PeuRkr3CDGzrv7z_SW3CUXcMwvLeVY5pNcWKEu4CezjcR1e1_VTkkCVnbcsQOCkZav0-bHFgCkkoQSMUtsBLGlq-jQ-Zeyxffkw35Lfy5R-BqFL6GDVK4SANh2Lifiumm5695F3JJrXu6HiMyHbJ-P_G6_O5s9qB55LL3iP7nCLBHuLxu8E1Y0qCR0rTR-fd0w6Yp0"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div class="card-thumb">
+                  <img alt="Portfolio and Resume Design Review Workspace" src="https://lh3.googleusercontent.com/aida/AEtjO1WvdgIa1MJ7svD_crv5JTojb8oWirz0pJcZlmtXKAQ-7n0KMvtW-PeuRkr3CDGzrv7z_SW3CUXcMwvLeVY5pNcWKEu4CezjcR1e1_VTkkCVnbcsQOCkZav0-bHFgCkkoQSMUtsBLGlq-jQ-Zeyxffkw35Lfy5R-BqFL6GDVK4SANh2Lifiumm5695F3JJrXu6HiMyHbJ-P_G6_O5s9qB55LL3iP7nCLBHuLxu8E1Y0qCR0rTR-fd0w6Yp0" />
+                </div>
                 <div>
                   <div class="card-top-meta">
                     <span class="duration-tag">02 MINGGU REVIEW</span>
                     <div class="rating-badge">
-                      <svg aria-hidden="true" viewbox="0 0 20 20">
-                        <path
-                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
-                        </path>
-                      </svg>
-                      <span class="">5.0 (92 ulasan)</span>
+                      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
+                      <span>5.0 (92)</span>
                     </div>
                   </div>
                   <h3 class="service-card-title">Portfolio &amp; Resume ATS Deep-Audit</h3>
-                  <p class="service-card-desc">Review baris-per-baris resume dan studi kasus portofolio desain Anda agar
-                    lolos pemindaian ATS dan memikat Hiring Manager.</p>
+                  <p class="service-card-desc">Review baris-per-baris resume dan studi kasus portofolio desain Anda agar lolos pemindaian ATS dan memikat Hiring Manager.</p>
                 </div>
                 <div>
                   <div class="mentor-profile-strip">
-                    <div class="mentor-avatar">AA</div>
+                    <div class="mentor-avatar">AF</div>
                     <div class="mentor-meta-info">
-                      <h4 class="">Alvi Fatih</h4>
-                      <p class="">Senior Product Designer</p>
+                      <h4>Alvi Fatih</h4>
+                      <p>Senior Product Designer</p>
                     </div>
                   </div>
                   <div class="card-footer-row">
                     <span class="price-tag">Rp 299.000</span>
-                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
-                      Batch</a>
+                    <a class="btn btn-primary btn-sm" href="#register">Daftar Batch</a>
                   </div>
                 </div>
               </article>
+              
               <!-- Card 3 -->
               <article class="service-card" data-category="engineering" style="display: flex;">
-                <div class=""
-                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
-                  <img alt="Mock Technical System Design Whiteboard Session" class=""
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1WRn3ffRweT_oqkOnddwj-8yIVWGbGo5bH5zf_F-L2VbcZMsErd5JsSLq_vG44nR8UuOnVqwO63Jwi2FpKDlocRCG7evZABZNIy4l8_X1bXC5uYgazxRu5mJta0DS9HX8LWcGLLPfeK59o3j-w-fDtv-h0lDbkBnW91mmRXMJHPK5X4Fu-3acumgoU-kQwW4zSvZo5mA5E-DcY7e9_3cKHjpMzcdG9n_n2xAkYDQkoFr-AYdjyokCGAVA"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div class="card-thumb">
+                  <img alt="Mock Technical System Design Whiteboard Session" src="https://lh3.googleusercontent.com/aida/AEtjO1WRn3ffRweT_oqkOnddwj-8yIVWGbGo5bH5zf_F-L2VbcZMsErd5JsSLq_vG44nR8UuOnVqwO63Jwi2FpKDlocRCG7evZABZNIy4l8_X1bXC5uYgazxRu5mJta0DS9HX8LWcGLLPfeK59o3j-w-fDtv-h0lDbkBnW91mmRXMJHPK5X4Fu-3acumgoU-kQwW4zSvZo5mA5E-DcY7e9_3cKHjpMzcdG9n_n2xAkYDQkoFr-AYdjyokCGAVA" />
+                </div>
                 <div>
                   <div class="card-top-meta">
                     <span class="duration-tag">LIVE SIMULATION</span>
                     <div class="rating-badge">
-                      <svg aria-hidden="true" viewbox="0 0 20 20">
-                        <path
-                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
-                        </path>
-                      </svg>
-                      <span class="">4.9 (115 ulasan)</span>
+                      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
+                      <span>4.9 (115)</span>
                     </div>
                   </div>
                   <h3 class="service-card-title">Mock Technical &amp; System Design Interview</h3>
-                  <p class="service-card-desc">Simulasi live coding teknis 90 menit dan studi kasus arsitektur sistem
-                    dengan feedback tertulis mendalam setelah sesi selesai.</p>
+                  <p class="service-card-desc">Simulasi live coding teknis 90 menit dan studi kasus arsitektur sistem dengan feedback tertulis mendalam setelah sesi selesai.</p>
                 </div>
                 <div>
                   <div class="mentor-profile-strip">
                     <div class="mentor-avatar">CH</div>
                     <div class="mentor-meta-info">
-                      <h4 class="">Chaplin</h4>
-                      <p class="">Principal Frontend Engineer</p>
+                      <h4>Chaplin</h4>
+                      <p>Principal Frontend Engineer</p>
                     </div>
                   </div>
                   <div class="card-footer-row">
                     <span class="price-tag">Rp 399.000</span>
-                    <a class="btn btn-primary" href="#register" style="padding: 6px 14px; font-size: 0.8125rem;">Daftar
-                      Batch</a>
+                    <a class="btn btn-primary btn-sm" href="#register">Daftar Batch</a>
                   </div>
                 </div>
               </article>
+              
+              <!-- Card 4 -->
               <article class="service-card" data-category="data">
-                <div
-                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
-                  <img alt="Data Science &amp; AI Engineering: Real-World ML Ops" class=""
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div class="card-thumb">
+                  <img alt="Data Science &amp; AI Engineering: Real-World ML Ops" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                </div>
                 <div>
-                  <div class="card-top-meta"><span class="duration-tag">06 MINGGU INTENSIF</span>
-                    <div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20">
-                        <path
-                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
-                        </path>
-                      </svg><span class="">4.9 (110 ulasan)</span></div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">06 MINGGU INTENSIF</span>
+                    <div class="rating-badge">
+                      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
+                      <span>4.9 (110)</span>
+                    </div>
                   </div>
                   <h3 class="service-card-title">Data Science &amp; AI Engineering: Real-World ML Ops</h3>
-                  <p class="service-card-desc">Bimbingan intensif end-to-end membangun pipeline machine learning,
-                    feature engineering, evaluasi model, dan deployment model ke skala produksi.</p>
+                  <p class="service-card-desc">Bimbingan intensif end-to-end membangun pipeline machine learning, feature engineering, evaluasi model, dan deployment model ke skala produksi.</p>
                 </div>
                 <div>
                   <div class="mentor-profile-strip">
                     <div class="mentor-avatar">DA</div>
                     <div class="mentor-meta-info">
-                      <h4 class="">Farhan Rizky</h4>
-                      <p class="">Senior AI Engineer @ Global Tech</p>
+                      <h4>Farhan Rizky</h4>
+                      <p>Senior AI Engineer @ Global Tech</p>
                     </div>
                   </div>
                   <div class="card-footer-row">
-                    <div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 549.000</span><span
-                        class=""
-                        style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp
-                        1.100.000</span></div><a class="btn btn-primary" href="#register"
-                      style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                    <div class="price-block">
+                      <span class="price-tag">Rp 549.000</span>
+                      <span class="price-strikethrough">Rp 1.100.000</span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#register">Daftar Batch</a>
                   </div>
                 </div>
               </article>
+              
+              <!-- Card 5 -->
               <article class="service-card" data-category="product">
-                <div
-                  style="width: 100%; aspect-ratio: 16 / 9; max-height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 16px; position: relative;">
-                  <img alt="Product Management Mastery &amp; Product Discovery" class=""
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGic29N__nDRwrRub-VClz6MHdcebEB3uE2gu6YxUJN4ANz66P-Dzqegg8rxLUJuMVVOCm6BE4KHwwu0KQ6tZZy2uheqU7f6yG3RZ_thvZ4PChvkgUKt7DUB4ZvahmWQqOEJiM-WkaGx2bKUx7SwPDJPObN3Te2u1EPBnw-mglJtf-suQnD0_AaQyA1gwhFhoLAOMuf80LneceTY0K6tmVBN-ImxT7i3jGYsvbTKKflFY91NplvE85"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" /></div>
+                <div class="card-thumb">
+                  <img alt="Product Management Mastery &amp; Product Discovery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGic29N__nDRwrRub-VClz6MHdcebEB3uE2gu6YxUJN4ANz66P-Dzqegg8rxLUJuMVVOCm6BE4KHwwu0KQ6tZZy2uheqU7f6yG3RZ_thvZ4PChvkgUKt7DUB4ZvahmWQqOEJiM-WkaGx2bKUx7SwPDJPObN3Te2u1EPBnw-mglJtf-suQnD0_AaQyA1gwhFhoLAOMuf80LneceTY0K6tmVBN-ImxT7i3jGYsvbTKKflFY91NplvE85" />
+                </div>
                 <div>
-                  <div class="card-top-meta"><span class="duration-tag">04 MINGGU STRATEGI</span>
-                    <div class="rating-badge"><svg aria-hidden="true" viewbox="0 0 20 20">
-                        <path
-                          d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z">
-                        </path>
-                      </svg><span class="">5.0 (88 ulasan)</span></div>
+                  <div class="card-top-meta">
+                    <span class="duration-tag">04 MINGGU STRATEGI</span>
+                    <div class="rating-badge">
+                      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M9.05 3.69c.3-.92 1.6-.92 1.9 0l1.29 3.96a1 1 0 00.95.69h4.16c.97 0 1.37 1.25.59 1.81l-3.37 2.45a1 1 0 00-.36 1.12l1.29 3.96c.3.92-.75 1.69-1.54 1.12L10.59 16.35a1 1 0 00-1.18 0l-3.37 2.45c-.79.57-1.84-.2-1.54-1.12l1.29-3.96a1 1 0 00-.36-1.12L2.06 10.15c-.78-.56-.38-1.81.59-1.81h4.16a1 1 0 00.95-.69l1.29-3.96z"></path></svg>
+                      <span>5.0 (88)</span>
+                    </div>
                   </div>
                   <h3 class="service-card-title">Product Management Mastery &amp; Product Discovery</h3>
-                  <p class="service-card-desc">Menguasai pembuatan PRD berstandar internasional, analisis metrik North
-                    Star, prioritisasi backlog dengan RICE framework, dan simulasi presentasi roadmap.</p>
+                  <p class="service-card-desc">Menguasai pembuatan PRD berstandar internasional, analisis metrik North Star, prioritisasi backlog dengan RICE framework, dan simulasi presentasi roadmap.</p>
                 </div>
                 <div>
                   <div class="mentor-profile-strip">
-                    <div class="mentor-avatar">PM</div>
+                    <div class="mentor-avatar">SN</div>
                     <div class="mentor-meta-info">
-                      <h4 class="">Sarah Nabila</h4>
-                      <p class="">Principal Product Manager</p>
+                      <h4>Sarah Nabila</h4>
+                      <p>Principal Product Manager</p>
                     </div>
                   </div>
                   <div class="card-footer-row">
-                    <div style="display: flex; flex-direction: column;"><span class="price-tag">Rp 479.000</span><span
-                        class=""
-                        style="font-size: 0.75rem; color: rgb(148, 163, 184); text-decoration: line-through;">Rp
-                        950.000</span></div><a class="btn btn-primary" href="#register"
-                      style="padding: 6px 14px; font-size: 0.8125rem;">Daftar Batch</a>
+                    <div class="price-block">
+                      <span class="price-tag">Rp 479.000</span>
+                      <span class="price-strikethrough">Rp 950.000</span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#register">Daftar Batch</a>
                   </div>
                 </div>
               </article>
             </div>
           </section>
-          <!-- B. Founders Section (<section id="founders">) -->
+
+          <!-- Founders Section -->
           <section aria-labelledby="foundersTitle" id="founders">
             <span class="section-tag">DEWAN PENDIRI</span>
             <h2 class="section-title" id="foundersTitle">Dipimpin oleh Tim Inovator Muda Berdedikasi</h2>
-            <p class="section-desc">Masing-masing pendiri membawa keahlian fungsional di bidang kepemimpinan produk,
-              arsitektur sistem, dan rekayasa antarmuka digital.</p>
+            <p class="section-desc">Masing-masing pendiri membawa keahlian fungsional di bidang kepemimpinan produk, arsitektur sistem, dan rekayasa antarmuka digital.</p>
             <div class="founders-grid">
-              <!-- Founder 1 -->
               <article class="founder-card">
-                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
-                    alt="Rakha - Chief Executive Officer" class=""
-                    src="assets/images/rakha_icon.jpeg"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <div class="founder-avatar-frame">
+                  <img alt="Rakha - Chief Executive Officer" src="assets/images/rakha_icon.jpeg" />
+                </div>
                 <h3 class="founder-name">Rakha</h3>
                 <span class="founder-role-badge">Chief Executive Officer</span>
                 <p class="founder-bio">Bertanggung jawab atas arsitektur semantik HTML5, penyusunan konten web, serta koordinasi tim dan repositori proyek.</p>
@@ -475,12 +405,10 @@
                   <a aria-label="Profil GitHub Rakha" class="social-btn" href="#github">GitHub</a>
                 </div>
               </article>
-              <!-- Founder 2 -->
               <article class="founder-card">
-                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
-                    alt="Alvi - Chief Technology Officer" class=""
-                    src="assets/images/foto_alvi.jpg"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <div class="founder-avatar-frame">
+                  <img alt="Alvi Fatih - Chief Technology Officer" src="assets/images/foto_alvi.jpg" />
+                </div>
                 <h3 class="founder-name">Alvi Fatih</h3>
                 <span class="founder-role-badge">Chief Technology Officer</span>
                 <p class="founder-bio">Mengembangkan sistem desain Vanilla CSS, variabel :root, serta tata letak desktop berbasis Flexbox dan CSS Grid.</p>
@@ -489,12 +417,10 @@
                   <a aria-label="Profil GitHub Alvi" class="social-btn" href="#github">GitHub</a>
                 </div>
               </article>
-              <!-- Founder 3 -->
               <article class="founder-card">
-                <div class="founder-avatar-frame" style="padding: 0px; overflow: hidden;"><img
-                    alt="Chaplin - Lead UI/UX &amp; Frontend" class=""
-                    src="assets/images/Foto Chaplin.jpeg"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" /></div>
+                <div class="founder-avatar-frame">
+                  <img alt="Chaplin - Lead UI/UX &amp; Frontend" src="assets/images/Foto%20Chaplin.jpeg" />
+                </div>
                 <h3 class="founder-name">Chaplin</h3>
                 <span class="founder-role-badge">Lead UI/UX &amp; Frontend</span>
                 <p class="founder-bio">Menerapkan responsivitas multi-perangkat via CSS Media Queries dan interaktivitas navigasi menggunakan Vanilla JavaScript.</p>
@@ -505,46 +431,43 @@
               </article>
             </div>
           </section>
-          <!-- C. Testimonials Section (<section id="testimonials">) -->
+
+          <!-- Testimonials Section -->
           <section aria-labelledby="testimonialsTitle" id="testimonials">
             <span class="section-tag">BUKTI KEBERHASILAN</span>
             <h2 class="section-title" id="testimonialsTitle">Apa Kata Alumni Mentee Kami?</h2>
-            <p class="section-desc">Kisah nyata mereka yang berhasil meraih penawaran kerja pertama di industri
-              teknologi.</p>
+            <p class="section-desc">Kisah nyata mereka yang berhasil meraih penawaran kerja pertama di industri teknologi.</p>
             <div class="testimonials-grid">
               <figure class="testimonial-figure">
                 <blockquote class="testimonial-quote">
-                  "Bedah portofolio di MentorVerse benar-benar membuka mata saya. Dari 20 aplikasi yang saya kirim dan
-                  selalu ditolak, setelah perbaikan resume bersama Alvi, saya langsung dipanggil interview di 4 tech
-                  company!"
+                  "Bedah portofolio di MentorVerse benar-benar membuka mata saya. Dari 20 aplikasi yang saya kirim dan selalu ditolak, setelah perbaikan resume bersama Alvi, saya langsung dipanggil interview di 4 tech company!"
                 </blockquote>
                 <figcaption class="testimonial-author">
                   <div class="author-initial">DN</div>
                   <div class="author-info">
-                    <h4 class="">Dimas Nugraha</h4>
-                    <p class="">Junior Frontend Dev @ FinTech Solution</p>
+                    <h4>Dimas Nugraha</h4>
+                    <p>Junior Frontend Dev @ FinTech Solution</p>
                   </div>
                 </figcaption>
               </figure>
               <figure class="testimonial-figure">
                 <blockquote class="testimonial-quote">
-                  "Simulasi mock technical interview-nya sangat mirip dengan kondisi wawancara aslinya. Masukan dari
-                  mentor Kevin membuat saya jauh lebih tenang dan percaya diri saat live coding test."
+                  "Simulasi mock technical interview-nya sangat mirip dengan kondisi wawancara aslinya. Masukan dari mentor Kevin membuat saya jauh lebih tenang dan percaya diri saat live coding test."
                 </blockquote>
                 <figcaption class="testimonial-author">
                   <div class="author-initial">SP</div>
                   <div class="author-info">
-                    <h4 class="">Siti Prameswari</h4>
-                    <p class="">Associate Software Engineer @ E-Commerce</p>
+                    <h4>Siti Prameswari</h4>
+                    <p>Associate Software Engineer @ E-Commerce</p>
                   </div>
                 </figcaption>
               </figure>
             </div>
           </section>
         </div>
-        <!-- =================== SIDEBAR (<aside>) (30%) =================== -->
+
+        <!-- SIDEBAR -->
         <aside aria-label="Informasi Sekunder dan Agenda" class="sidebar">
-          <!-- Widget 1: Upcoming Webinar -->
           <article class="sidebar-widget">
             <div class="widget-header">
               <h3 class="widget-title">Agenda Webinar Mendatang</h3>
@@ -552,35 +475,30 @@
             <span class="webinar-date-badge">14 OKTOBER 2026 • 19.30 WIB</span>
             <h4 class="webinar-topic">Kiat Lolos Wawancara Tech Startup 2026: Tembus Gaji Dua Digit</h4>
             <p class="webinar-speaker">Pembicara: Pratama Wijaya (Engineering Manager)</p>
-            <a class="btn btn-accent" href="#webinar-rsvp" style="width: 100%;">RSVP Sekarang (Gratis)</a>
+            <a class="btn btn-accent btn-full" href="#webinar-rsvp">RSVP Sekarang (Gratis)</a>
           </article>
-          <!-- Widget 2: Quick Career Tips -->
+          
           <article class="sidebar-widget">
             <div class="widget-header">
               <h3 class="widget-title">Tips Karier Kilat (ATS)</h3>
             </div>
             <ul class="tips-list">
-              <li class="tip-item">Gunakan format tanggal standar YYYY-MM agar mesin pemindai ATS tidak mengalami eror
-                *parsing*.</li>
-              <li class="tip-item">Tuliskan pencapaian berbasis metrik riil (misal: "Meningkatkan performa web sebesar
-                34%").</li>
-              <li class="tip-item">Sertakan tautan proyek live demo yang dapat langsung diakses publik pada file resume.
-              </li>
+              <li class="tip-item">Gunakan format tanggal standar YYYY-MM agar mesin pemindai ATS tidak mengalami eror *parsing*.</li>
+              <li class="tip-item">Tuliskan pencapaian berbasis metrik riil (misal: "Meningkatkan performa web sebesar 34%").</li>
+              <li class="tip-item">Sertakan tautan proyek live demo yang dapat langsung diakses publik pada file resume.</li>
             </ul>
           </article>
-          <!-- Widget 3: Fast Newsletter Form -->
+          
           <article class="sidebar-widget">
             <div class="widget-header">
               <h3 class="widget-title">Notifikasi Batch Baru</h3>
             </div>
-            <p class="" style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--space-md);">
-              Dapatkan informasi awal saat kuota mentoring dibuka kembali.</p>
+            <p class="newsletter-subtext">Dapatkan informasi awal saat kuota mentoring dibuka kembali.</p>
             <form class="newsletter-form" id="sidebarNewsletterForm" novalidate="">
               <div class="form-group">
-                <input aria-label="Alamat email untuk newsletter" id="subscriberEmail"
-                  placeholder="Masukkan alamat email aktif" required="" type="email" />
+                <input aria-label="Alamat email untuk newsletter" id="subscriberEmail" placeholder="Masukkan alamat email aktif" required="" type="email" />
               </div>
-              <button class="btn btn-primary" style="width: 100%;" type="submit">Daftarkan Email Saya</button>
+              <button class="btn btn-primary btn-full" type="submit">Daftarkan Email Saya</button>
               <p aria-live="polite" class="form-feedback" id="formFeedbackMsg"></p>
             </form>
           </article>
@@ -588,71 +506,64 @@
       </div>
     </section>
   </main>
-  <!-- ========================================================================
-      FOOTER (<footer>)
-      ======================================================================== -->
+
+  <!-- FOOTER -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col-brand">
           <a aria-label="Beranda MentorVerse" class="brand-logo" href="#hero">
-            <svg aria-hidden="true" style="fill: #008B99;" viewbox="0 0 24 24">
-              <path
-                d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z">
-              </path>
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M12 2.5s4.5 4.5 4.5 10c0 2.5-1.5 4.5-4.5 7-3-2.5-4.5-4.5-4.5-7 0-5.5 4.5-10 4.5-10zm0 13a3 3 0 100-6 3 3 0 000 6z"></path>
             </svg>
-            <span class="">MentorVerse</span>
+            <span>MentorVerse</span>
           </a>
-          <p class="">
-            Platform akselerasi karier teknologi nomor satu yang berkomitmen mendemokratisasi akses bimbingan industri
-            berkualitas bagi mahasiswa dan lulusan baru Indonesia.
+          <p>
+            Platform akselerasi karier teknologi nomor satu yang berkomitmen mendemokratisasi akses bimbingan industri berkualitas bagi mahasiswa dan lulusan baru Indonesia.
           </p>
         </div>
         <div>
           <h4 class="footer-title">Tautan Cepat</h4>
           <ul class="footer-links">
-            <li class=""><a class="footer-link" href="#hero">Beranda Utama</a></li>
-            <li class=""><a class="footer-link" href="#services">Katalog Program</a></li>
-            <li class=""><a class="footer-link" href="#about">Tentang Startup</a></li>
-            <li class=""><a class="footer-link" href="#founders">Profil Pengembang</a></li>
+            <li><a class="footer-link" href="#hero">Beranda Utama</a></li>
+            <li><a class="footer-link" href="#services">Katalog Program</a></li>
+            <li><a class="footer-link" href="#about">Tentang Startup</a></li>
+            <li><a class="footer-link" href="#founders">Profil Pengembang</a></li>
           </ul>
         </div>
         <div>
           <h4 class="footer-title">Track Program</h4>
           <ul class="footer-links">
-            <li class=""><a class="footer-link" href="#services">Software Engineering</a></li>
-            <li class=""><a class="footer-link" href="#services">UI/UX Design</a></li>
-            <li class=""><a class="footer-link" href="#services">Data &amp; Artificial Intelligence</a></li>
-            <li class=""><a class="footer-link" href="#services">Product Management</a></li>
+            <li><a class="footer-link" href="#services">Software Engineering</a></li>
+            <li><a class="footer-link" href="#services">UI/UX Design</a></li>
+            <li><a class="footer-link" href="#services">Data &amp; Artificial Intelligence</a></li>
+            <li><a class="footer-link" href="#services">Product Management</a></li>
           </ul>
         </div>
         <div>
           <h4 class="footer-title">Kantor Operasional</h4>
-          <p class="" style="font-size: 0.875rem; margin-bottom: 8px;">Kawasan Inovasi Digital MentorVerse, Jakarta
-            Selatan, DKI Jakarta 12430</p>
-          <p class="" style="font-size: 0.875rem;">Email: info@mentorverse.id</p>
+          <p class="office-text">Kawasan Inovasi Digital MentorVerse, Jakarta Selatan, DKI Jakarta 12430</p>
+          <p class="office-email">Email: info@mentorverse.id</p>
         </div>
       </div>
       <div class="footer-bottom-row">
-        <p class="">© 2026 MentorVerse Technologies. Hak cipta dilindungi undang-undang.</p>
+        <p>© 2026 MentorVerse Technologies. Hak cipta dilindungi undang-undang.</p>
         <div class="footer-social-icons">
-          <a aria-label="GitHub MentorVerse" class="" href="#github">GitHub</a>
-          <a aria-label="LinkedIn MentorVerse" class="" href="#linkedin">LinkedIn</a>
-          <a aria-label="Instagram MentorVerse" class="" href="#instagram">Instagram</a>
+          <a aria-label="GitHub MentorVerse" href="#github">GitHub</a>
+          <a aria-label="LinkedIn MentorVerse" href="#linkedin">LinkedIn</a>
+          <a aria-label="Instagram MentorVerse" href="#instagram">Instagram</a>
         </div>
       </div>
     </div>
   </footer>
-  <!-- ========================================================================
-      FLOATING BACK TO TOP BUTTON
-      ======================================================================== -->
+
   <button aria-label="Kembali ke Atas" class="back-to-top-btn" id="backToTopBtn" type="button">
     <span class="tooltip-text">Kembali ke Atas</span>
     <svg aria-hidden="true" viewbox="0 0 24 24">
       <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
     </svg>
   </button>
+  
   <script src="js/script.js"></script>
 </body>
-
 </html>

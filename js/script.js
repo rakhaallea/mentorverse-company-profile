@@ -2,7 +2,7 @@
  * MentorVerse Interactive Scripts (ES6 Vanilla JS)
  */
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Hamburger Menu Toggle
+  // 1. Mobile & Tablet Hamburger Menu Toggle
   const menuBtn = document.getElementById('menuToggleBtn');
   const navDrawer = document.getElementById('mainNavDrawer');
 
@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
       navDrawer.classList.toggle('is-active');
     });
 
-    navDrawer.querySelectorAll('.nav-link').forEach(link => {
+    // Menutup drawer ketika link menu ATAU tombol CTA di dalamnya ditekan
+    navDrawer.querySelectorAll('.nav-link, .drawer-actions .btn').forEach(link => {
       link.addEventListener('click', () => {
         menuBtn.setAttribute('aria-expanded', 'false');
         navDrawer.classList.remove('is-active');
